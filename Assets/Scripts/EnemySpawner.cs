@@ -1,60 +1,41 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
-    [SerializeField] private Transform[] _spawnPositions;
-    private bool _isDead = false;
-    [SerializeField] private float _timeBetweenSpawn;
-    [SerializeField] private float _health;
-    [SerializeField] private Slider _healthSlider;
+    private EnemySpawnerHealth _spawnerHealth;
+    [SerializeField] Transform[] _spawnPoints;
+    [SerializeField] GameObject _enemyPrefab;  
+
+    private void Awake()
+    {
+        _spawnerHealth = FindObjectOfType<EnemySpawnerHealth>();
+    }
     private void Start()
     {
-        _health = 1.0f;
-        StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpanwEnemies());
     }
-    void Update()
+    IEnumerator SpanwEnemies()
     {
-        DisplayHealth();
-        CheckIfDead();
-    }
-
-    IEnumerator SpawnEnemy()
-    {
-        while (!_isDead)
+        while (gameObject)
         {
-            Instantiate(_enemyPrefab, _spawnPositions[Random.Range(0,_spawnPositions.Length)].position,Quaternion.identity);
-            yield return new WaitForSeconds(_timeBetweenSpawn);
-        }
-
-    }
-    void DisplayHealth()
-    {
-        _healthSlider.value = _health;
-    }
-    void CheckIfDead()
-    {
-        if(_health <= 0.0000f)
-        {
-            StopSpawning();
-            Dead();
+            Instantiate(_enemyPrefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity);
+            yield return new WaitForSeconds(2.0f);
         }
     }
-    void StopSpawning()
+
+    private void Update()
     {
-        _isDead = true;
+        if(_spawnerHealth._health <= 0)
+        {
+            Destroy(gameObject);
+        }
         
     }
-    public void DecreaseHealth(float damage)
-    {
-        _health -= damage;
-    }
-
-    public void Dead()
-    {
-        Destroy(gameObject, 1.0f);
-        //play sound
-    }
 }
+
+
+/*public interface HEALTH
+{ 
+    void Damage();
+}*/

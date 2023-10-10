@@ -6,50 +6,59 @@ public class EnemyChasePlayer : MonoBehaviour
 {
     PlayerMovement _player;
     private NavMeshAgent _agent;
-    [SerializeField] private Transform _targetTransform;
-    [SerializeField] private float _damage;
-    [SerializeField] private float _health;
     [SerializeField] private Slider _healthBar;
+
+    [SerializeField] private float _enemyHealth;
+    [SerializeField] private float _enemyDamage;
+
+    [SerializeField] Bullet _bullet;
     void Awake()
     {
+        //_bullet = FindObjectOfType<Bullet>();
         _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
-        _targetTransform = _player.transform;
         _agent = GetComponent<NavMeshAgent>();
     }
 
     private void Start()
     {
-        _health = 1.0f;
+
     }
     void Update()
     {
-        _agent.destination = _targetTransform.position;
+        _agent.destination = _player.transform.position;
         DisplayHealth();
-        CheckIfDead();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            _player.Damage(_damage);
-            Destroy(gameObject, 0.1f);
+            //player damage
+            _player.Damage(1f);
+            Destroy(gameObject);
         }
+
+        if (other.CompareTag("Bullet"))
+        {
+            //damage enemy
+            EnemyDamage(_enemyDamage);
+            Destroy(other.gameObject);
+
+        }
+           
+    }
+    public void EnemyDamage(float damage)
+    {
+         _enemyHealth -= damage; //dry karle ise
+        if (_enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     void DisplayHealth()
     {
-        _healthBar.value = _health;
-    }
-    public void DamageEnemy(float damage)
-    {
-        _health -= damage;
+       _healthBar.value = _enemyHealth;
     }
 
-    public void CheckIfDead()
-    {
-        if(_health <= 0)
-        {
-            Destroy(gameObject,0.1f);
-        }
-    }
 }

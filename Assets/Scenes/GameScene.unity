@@ -1569,6 +1569,7 @@ GameObject:
   - component: {fileID: 1125057853}
   - component: {fileID: 1125057852}
   - component: {fileID: 1125057856}
+  - component: {fileID: 1125057857}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Spawner
@@ -1667,16 +1668,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b92a041414d3c4ab7cf78cac10775a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 4999646168496087585, guid: ab6d6441e941ca34293ebb2cabdd8c31,
-    type: 3}
-  _spawnPositions:
+  _health: 5
+  _healthSlider: {fileID: 1546319161}
+--- !u!114 &1125057857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125057851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3515b3dc62a7b4caff30dd04bc31ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
   - {fileID: 771574097}
   - {fileID: 1215272705}
   - {fileID: 768366952}
   - {fileID: 1669689647}
-  _timeBetweenSpawn: 2
-  _health: 1
-  _healthSlider: {fileID: 1546319161}
+  _enemyPrefab: {fileID: 4999646168496087585, guid: ab6d6441e941ca34293ebb2cabdd8c31,
+    type: 3}
 --- !u!1 &1128920829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,7 +1904,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3064289071581504355, guid: 5df5d006a9c464543828ca4c2723c177,
     type: 3}
   _shootPos: {fileID: 1128920830}
-  _bulletForce: 1
+  _bulletForce: 5
 --- !u!1 &1371319831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,9 +2288,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0.734
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

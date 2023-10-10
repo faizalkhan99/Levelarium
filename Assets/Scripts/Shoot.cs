@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private float _bulletForce;
     public void FireBullet()
     {
+        Debug.Log("Shoot");
         GameObject bullet = Instantiate(_bulletPrefab, _shootPos.position, Quaternion.identity);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if(rb != null)
