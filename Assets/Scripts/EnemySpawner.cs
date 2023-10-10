@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Slider _healthSlider;
     private void Start()
     {
+        _health = 1.0f;
         StartCoroutine(SpawnEnemy());
     }
     void Update()
@@ -29,15 +30,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Bullet"))
-        {
-            Destroy(other.gameObject, 0.1f);
-            _health -= 0.06f;
-        }
-    }
     void DisplayHealth()
     {
         _healthSlider.value = _health;
@@ -47,11 +39,22 @@ public class EnemySpawner : MonoBehaviour
         if(_health <= 0.0000f)
         {
             StopSpawning();
+            Dead();
         }
     }
     void StopSpawning()
     {
         _isDead = true;
         
+    }
+    public void DecreaseHealth(float damage)
+    {
+        _health -= damage;
+    }
+
+    public void Dead()
+    {
+        Destroy(gameObject, 1.0f);
+        //play sound
     }
 }

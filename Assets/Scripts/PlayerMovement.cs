@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Slider _playerHealthbar;
     [SerializeField] private Rigidbody _rigidbody;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void HandleMovement()
     {
-        _rigidbody.AddForce((1000 *_speed) * Time.deltaTime * new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized, ForceMode.Force);
+        _rigidbody.AddForce((1000 * _speed) * Time.deltaTime * new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized, ForceMode.Force);
     }
     void DisplayHealth()
     {
@@ -33,4 +34,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerHealth -= damage;
     }
+
+    
 }
