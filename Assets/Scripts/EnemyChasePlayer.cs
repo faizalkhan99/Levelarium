@@ -5,23 +5,18 @@ using UnityEngine.UI;
 public class EnemyChasePlayer : MonoBehaviour
 {
     PlayerMovement _player;
+    
     private NavMeshAgent _agent;
+
     [SerializeField] private Slider _healthBar;
 
     [SerializeField] private float _enemyHealth;
     [SerializeField] private float _enemyDamage;
-
-    [SerializeField] Bullet _bullet;
     void Awake()
     {
         //_bullet = FindObjectOfType<Bullet>();
         _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
         _agent = GetComponent<NavMeshAgent>();
-    }
-
-    private void Start()
-    {
-
     }
     void Update()
     {
@@ -34,14 +29,14 @@ public class EnemyChasePlayer : MonoBehaviour
         {
             //player damage
             _player.Damage(1f);
-            Destroy(gameObject);
+            Destroy(gameObject); //enemy destroy
         }
 
         if (other.CompareTag("Bullet"))
         {
             //damage enemy
             EnemyDamage(_enemyDamage);
-            Destroy(other.gameObject);
+            Destroy(other.gameObject);  //bullet destroy
 
         }
            

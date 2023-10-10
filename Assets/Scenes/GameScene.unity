@@ -1568,7 +1568,6 @@ GameObject:
   - component: {fileID: 1125057854}
   - component: {fileID: 1125057853}
   - component: {fileID: 1125057852}
-  - component: {fileID: 1125057856}
   - component: {fileID: 1125057857}
   m_Layer: 0
   m_Name: Enemy Spawner
@@ -1656,20 +1655,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1125057856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125057851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b92a041414d3c4ab7cf78cac10775a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 5
-  _healthSlider: {fileID: 1546319161}
 --- !u!114 &1125057857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1682,6 +1667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3515b3dc62a7b4caff30dd04bc31ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 10
+  _damageDealt: 1
+  _healthBar: {fileID: 1546319161}
   _spawnPoints:
   - {fileID: 771574097}
   - {fileID: 1215272705}
@@ -2288,9 +2276,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

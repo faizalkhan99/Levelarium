@@ -1,16 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private EnemySpawnerHealth _spawnerHealth;
-    [SerializeField] Transform[] _spawnPoints;
-    [SerializeField] GameObject _enemyPrefab;  
+    [SerializeField] private int _health;
+    [SerializeField] private int _damageDealt;
 
-    private void Awake()
-    {
-        _spawnerHealth = FindObjectOfType<EnemySpawnerHealth>();
-    }
+    [SerializeField] private Slider _healthBar;
+
+    [SerializeField] Transform[] _spawnPoints;
+    [SerializeField] GameObject _enemyPrefab;
     private void Start()
     {
         StartCoroutine(SpanwEnemies());
@@ -26,11 +26,28 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if(_spawnerHealth._health <= 0)
+
+        DisplayHealth();
+    }
+
+    void DisplayHealth()
+    {
+        _healthBar.value = _health;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
+            _health -= _damageDealt;
+            if(_health <= 0) Die();
         }
-        
+    }
+
+    public void Die()
+    {
+            Destroy(gameObject, 0.5f);
     }
 }
 
