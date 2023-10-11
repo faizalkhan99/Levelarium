@@ -20,10 +20,18 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
         DisplayHealth();
+
+        _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
     }
     void HandleMovement()
     {
         _rigidbody.AddForce((1000 * _speed) * Time.deltaTime * new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized, ForceMode.Force);
+
+        if(joystick.Horizontal != 0 || joystick.Vertical != 0)
+        {
+            float moveAngle = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, moveAngle, 0);
+        }
     }
     void DisplayHealth()
     {
@@ -34,6 +42,4 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerHealth -= damage;
     }
-
-    
 }

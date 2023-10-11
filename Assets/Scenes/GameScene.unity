@@ -1386,6 +1386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1220790824}
   _offset: {x: 0, y: 15, z: -3}
+  _smootTime: 0.2
 --- !u!1 &982894162
 GameObject:
   m_ObjectHideFlags: 0

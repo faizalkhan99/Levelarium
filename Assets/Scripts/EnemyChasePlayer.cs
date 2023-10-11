@@ -22,6 +22,7 @@ public class EnemyChasePlayer : MonoBehaviour
     {
         _agent.destination = _player.transform.position;
         DisplayHealth();
+        _healthBar.gameObject.transform.rotation = Quaternion.identity;
     }
     private void OnTriggerEnter(Collider other)
     {
