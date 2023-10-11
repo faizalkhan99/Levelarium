@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EnemyChasePlayer : MonoBehaviour
 {
     PlayerMovement _player;
-    
+    CamShake _camShakeHandle;
     private NavMeshAgent _agent;
 
     [SerializeField] private Slider _healthBar;
@@ -14,7 +14,8 @@ public class EnemyChasePlayer : MonoBehaviour
     [SerializeField] private float _enemyDamage;
     void Awake()
     {
-        //_bullet = FindObjectOfType<Bullet>();
+        _camShakeHandle = GameObject.Find("Main Camera").GetComponent<CamShake>();
+        
         _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
         _agent = GetComponent<NavMeshAgent>();
     }
@@ -28,9 +29,9 @@ public class EnemyChasePlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //player damage
-            _player.Damage(1f);
+            _player.Damage(1f); //player damage
             Destroy(gameObject); //enemy destroy
+            _camShakeHandle.EnableShake();
         }
 
         if (other.CompareTag("Bullet"))
@@ -38,9 +39,10 @@ public class EnemyChasePlayer : MonoBehaviour
             //damage enemy
             EnemyDamage(_enemyDamage);
             Destroy(other.gameObject);  //bullet destroy
+            _camShakeHandle.EnableShake();
 
         }
-           
+
     }
     public void EnemyDamage(float damage)
     {

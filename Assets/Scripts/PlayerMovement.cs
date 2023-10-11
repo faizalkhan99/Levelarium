@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public FixedJoystick joystick;
+
     
     [SerializeField] private float _speed;
     [SerializeField] private float _playerHealth;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        
         _rigidbody = GetComponent<Rigidbody>();
         if (_rigidbody == null) Debug.Log("Player:RigidBody:NULL");
     }
