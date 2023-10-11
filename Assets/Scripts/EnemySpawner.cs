@@ -4,6 +4,11 @@ using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
+    CamShake _camShake;
+
+    [SerializeField] private GameObject _keyPrefab;
+    [SerializeField] Transform _keyPos; 
+
     [SerializeField] private int _health;
     [SerializeField] private int _damageDealt;
 
@@ -11,6 +16,11 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] GameObject _enemyPrefab;
+
+    private void Awake()
+    {
+        _camShake = GameObject.Find("Main Camera").GetComponent<CamShake>();
+    }
     private void Start()
     {
         StartCoroutine(SpanwEnemies());
@@ -44,15 +54,17 @@ public class EnemySpawner : MonoBehaviour
             if(_health <= 0) Die();
         }
     }
-
+    bool temp = false;
     public void Die()
     {
-            Destroy(gameObject, 0.5f);
+        GameManager.Instance.IsSpawnerDead = true;
+        if (temp == false)
+        {
+            GameManager.Instance.InstantiateKey();
+            temp = true;
+            _camShake.EnableShake();
+            Destroy(gameObject);
+        }
+        //play destroy sound here
     }
 }
-
-
-/*public interface HEALTH
-{ 
-    void Damage();
-}*/

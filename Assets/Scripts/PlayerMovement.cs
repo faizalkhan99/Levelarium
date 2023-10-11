@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -43,5 +44,10 @@ public class PlayerMovement : MonoBehaviour
     public void Damage(float damage)
     {
         _playerHealth -= damage;
+        if (_playerHealth <= 0)
+        {
+            Debug.Log("lmao ded, try again");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
