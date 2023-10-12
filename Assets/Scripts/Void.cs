@@ -8,6 +8,7 @@ public class Void : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             //level failed screen.
         }
     }

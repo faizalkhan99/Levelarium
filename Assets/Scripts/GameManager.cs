@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public void InstantiateGate()
     {
-        Instantiate(_gatePrefab, _gatePos.position, Quaternion.Euler(90,0,90));
+        Instantiate(_gatePrefab, _gatePos.position, _gatePos.rotation);
     }
 
     public void InstantiateKey()
