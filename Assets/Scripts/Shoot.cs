@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -11,10 +9,9 @@ public class Shoot : MonoBehaviour
     {
         Debug.Log("Shoot");
         GameObject bullet = Instantiate(_bulletPrefab, _shootPos.position, Quaternion.identity);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        if(rb != null)
+        if(bullet.TryGetComponent<Rigidbody>(out var rb))
         {
-            rb.AddForce((_shootPos.forward) * (_bulletForce * 1000) * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce((_bulletForce * 1000) * Time.deltaTime * (_shootPos.forward), ForceMode.Impulse);
         }
     }
 }

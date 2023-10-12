@@ -805,6 +805,7 @@ MonoBehaviour:
   joystick: {fileID: 0}
   _speed: 1.2
   _playerHealth: 10
+  _rotationSpeed: 1.3
   _playerHealthbar: {fileID: 1866332045843981}
   _rigidbody: {fileID: 1866332721463586}
 --- !u!114 &1866332721463596

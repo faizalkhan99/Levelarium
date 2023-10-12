@@ -6,16 +6,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public FixedJoystick joystick;
 
-    
-    [SerializeField] private float _speed;
-    [SerializeField] private float _playerHealth;
+    [SerializeField] float _speed;
+    [SerializeField] float _playerHealth;
+    [SerializeField] float _rotationSpeed;
 
-    [SerializeField] private Slider _playerHealthbar;
-    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] Slider _playerHealthbar;
+    
+    [SerializeField] Rigidbody _rigidbody;
 
     private void Awake()
     {
-        
+
         _rigidbody = GetComponent<Rigidbody>();
         if (_rigidbody == null) Debug.Log("Player:RigidBody:NULL");
     }
@@ -29,11 +30,11 @@ public class PlayerMovement : MonoBehaviour
     void HandleMovement()
     {
         _rigidbody.AddForce((1000 * _speed) * Time.deltaTime * new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized, ForceMode.Force);
-
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0)
+        float moveAngle = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
-            float moveAngle = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, moveAngle, 0);
+            Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, (1000 *_rotationSpeed) * Time.deltaTime);
         }
     }
     void DisplayHealth()

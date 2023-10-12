@@ -21,7 +21,7 @@ public class EnemyChasePlayer : MonoBehaviour
     }
     void Update()
     {
-        _agent.destination = _player.transform.position;
+        SendEnemyToPlayer();
         DisplayHealth();
         _healthBar.gameObject.transform.rotation = Quaternion.identity;
     }
@@ -43,6 +43,15 @@ public class EnemyChasePlayer : MonoBehaviour
 
         }
 
+    }
+
+    private void SendEnemyToPlayer()
+    {
+        if (_agent != null)
+        {
+            _agent.enabled = true;
+            _agent.destination = _player.transform.position;
+        }
     }
     public void EnemyDamage(float damage)
     {
