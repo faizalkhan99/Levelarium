@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private int _health;
     [SerializeField] private int _damageDealt;
+    [SerializeField] private float _timeBetweenSpawn;
 
     [SerializeField] private Slider _healthBar;
 
@@ -29,8 +30,8 @@ public class EnemySpawner : MonoBehaviour
     {
         while (gameObject)
         {
+            yield return new WaitForSeconds(_timeBetweenSpawn);
             Instantiate(_enemyPrefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity);
-            yield return new WaitForSeconds(2.0f);
         }
     }
 

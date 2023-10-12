@@ -14,7 +14,7 @@ public class Shoot : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if(rb != null)
         {
-            rb.AddForce(_shootPos.forward * (_bulletForce * 1000) * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce((_shootPos.forward) * (_bulletForce * 1000) * Time.deltaTime, ForceMode.Impulse);
         }
     }
 }

@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3515b3dc62a7b4caff30dd04bc31ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keyPrefab: {fileID: 9105343613880276187, guid: eb3ab7fe4862f694a9c27b8db00b823f,
+  _keyPrefab: {fileID: 2103622093545333340, guid: 80a325b660f8d384fafa53057da8f45e,
     type: 3}
   _keyPos: {fileID: 0}
   _health: 25
