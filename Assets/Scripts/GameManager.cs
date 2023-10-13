@@ -22,17 +22,20 @@ public class GameManager : MonoBehaviour
     public bool HasKey { get; set; }
 
 
-    [SerializeField] GameObject _gatePrefab, _keyPrefab;
-    [SerializeField] Transform _gatePos, _keyPos;
+    [SerializeField] GameObject GatePrefab, KeyPrefab;
+    [SerializeField] Transform GatePos, KeyPos;
+
+    public bool FellIntoVoid = false;
+    public bool IsLevelFailed = false;
+    public bool IsPlayerDead = false;
 
     public void InstantiateGate()
     {
-        Instantiate(_gatePrefab, _gatePos.position, _gatePos.rotation);
+        Instantiate(GatePrefab, GatePos.position, GatePos.rotation);
     }
 
     public void InstantiateKey()
     {
-        Instantiate(_keyPrefab, _keyPos.position, Quaternion.identity);
+        Instantiate(KeyPrefab, KeyPos.position, Quaternion.identity);
     }
-
 }

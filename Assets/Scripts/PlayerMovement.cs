@@ -14,9 +14,12 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] Rigidbody _rigidbody;
 
+    LoadingScreen _loadingScreen;
+
     private void Awake()
     {
-
+        _loadingScreen = GameObject.Find("UI MANAGER").GetComponent<LoadingScreen>();
+        if (_loadingScreen == null) Debug.Log("UI MANAGER:NULL");
         _rigidbody = GetComponent<Rigidbody>();
         if (_rigidbody == null) Debug.Log("Player:RigidBody:NULL");
     }
@@ -48,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
         if (_playerHealth <= 0)
         {
             Debug.Log("lmao ded, try again");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            UIManager.Instance.LevelFailedPanel(true);
         }
     }
+
 }

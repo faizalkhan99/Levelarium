@@ -9,8 +9,7 @@ public class LevelCompleteGate : MonoBehaviour
     {
         if(other.CompareTag("Player") && GameManager.Instance.HasKey && GameManager.Instance.IsSpawnerDead)
         {
-            //load next level, after loading screen ofcourse.
-            Debug.Log("Win");
+            UIManager.Instance.NextLevelPanel();
         }
     }
 }
