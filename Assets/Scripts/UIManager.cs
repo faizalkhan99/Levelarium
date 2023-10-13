@@ -61,7 +61,6 @@ public class UIManager : MonoBehaviour
 
     public void FellIntoVoid()
     {
-        Time.timeScale = 0.4f;
         _fellIntoVoidPanel.SetActive(true);
     }
 }

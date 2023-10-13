@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckFall()
     {
-        if(transform.position.y <= -15.0f)
+        if(transform.position.y <= -30.0f)
         {
             UIManager.Instance.FellIntoVoid();
         }
