@@ -1,3 +1,4 @@
+using System.Transactions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,12 +15,10 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] Rigidbody _rigidbody;
 
-    LoadingScreen _loadingScreen;
 
     private void Awake()
     {
-        _loadingScreen = GameObject.Find("UI MANAGER").GetComponent<LoadingScreen>();
-        if (_loadingScreen == null) Debug.Log("UI MANAGER:NULL");
+
         _rigidbody = GetComponent<Rigidbody>();
         if (_rigidbody == null) Debug.Log("Player:RigidBody:NULL");
     }
@@ -27,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
         DisplayHealth();
-
         _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
+        CheckFall();
     }
     void HandleMovement()
     {
@@ -52,6 +51,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("lmao ded, try again");
             UIManager.Instance.LevelFailedPanel(true);
+        }
+    }
+
+    private void CheckFall()
+    {
+        if(transform.position.y <= -15.0f)
+        {
+            UIManager.Instance.FellIntoVoid();
         }
     }
 

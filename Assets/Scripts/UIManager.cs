@@ -7,11 +7,14 @@ public class UIManager : MonoBehaviour
     {
         get
         {
-            if (_instance == null) Debug.Log("UI MANAGER WAS NULL");
+            if (_instance == null)
+            {
+                Debug.Log("UI MANAGER WAS NULL");
+            }
             return _instance;
         }
     }
-    
+
     [SerializeField] GameObject _nextLevelPanel;
     [SerializeField] GameObject _pauseMenuPanel;
     [SerializeField] GameObject _levelfailedPanel;
@@ -54,5 +57,11 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1f;
             _pauseMenuPanel.SetActive(false);
         }
+    }
+
+    public void FellIntoVoid()
+    {
+        Time.timeScale = 0.4f;
+        _fellIntoVoidPanel.SetActive(true);
     }
 }
