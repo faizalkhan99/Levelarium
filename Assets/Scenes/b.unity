@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.9622642, g: 0.15886435, b: 0.24741887, a: 1}
+  m_AmbientEquatorColor: {r: 0.18431827, g: 0.24182864, b: 0.3584906, a: 1}
+  m_AmbientGroundColor: {r: 0.036712352, g: 0.040500417, b: 0.31132078, a: 1}
   m_AmbientIntensity: 0
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 327575af8d77d1049aace6da979f4c8b, type: 2}
   m_HaloStrength: 0.5
@@ -1124,7 +1124,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54802
+  m_Name: pb_Mesh92788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6596,8 +6596,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -6712,7 +6712,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54600
+  m_Name: pb_Mesh92586
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9949,7 +9949,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54902
+  m_Name: pb_Mesh92888
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

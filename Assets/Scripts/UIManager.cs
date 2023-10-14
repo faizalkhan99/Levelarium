@@ -94,4 +94,8 @@ public class UIManager : MonoBehaviour
     {
         _fellIntoVoidPanel.SetActive(true);
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
