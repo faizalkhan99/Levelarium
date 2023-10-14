@@ -2215,8 +2215,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1990952154}
-        m_TargetAssemblyTypeName: LoadingScreen, Assembly-CSharp
+      - m_Target: {fileID: 1990952155}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -8109,8 +8109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77f637f52ba64946896002faac63a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _progressBar: {fileID: 2073127963}
-  _loadingScreen: {fileID: 497464202}
 --- !u!114 &1990952155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8127,6 +8125,9 @@ MonoBehaviour:
   _pauseMenuPanel: {fileID: 286847782}
   _levelfailedPanel: {fileID: 1711375653}
   _fellIntoVoidPanel: {fileID: 1876309507}
+  _levelButton: {fileID: 0}
+  _progressBar: {fileID: 2073127963}
+  _loadingScreen: {fileID: 497464202}
 --- !u!1 &2015371460
 GameObject:
   m_ObjectHideFlags: 0

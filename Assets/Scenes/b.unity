@@ -629,7 +629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58905293}
   m_LocalRotation: {x: 0.0000006221235, y: -0.0000057891007, z: 0.2588184, w: -0.96592605}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.75}
   m_LocalScale: {x: 1, y: 1, z: 2.2051}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1124,7 +1124,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh125484
+  m_Name: pb_Mesh54802
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1520,7 +1520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 122933180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMnuScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &122933180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2526,7 +2538,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 358471591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseUnpauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &358471591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3483,7 +3507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469542163}
   m_LocalRotation: {x: 0.18301262, y: -0.68301183, z: -0.18301207, w: 0.68301386}
-  m_LocalPosition: {x: 2.1556067, y: 0, z: -6.8750186}
+  m_LocalPosition: {x: 2.1556067, y: 0, z: -4.1250186}
   m_LocalScale: {x: 1, y: 1, z: 2.2051}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4160,7 +4184,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597682750}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: b
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597682750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4727,7 +4763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701200547}
   m_LocalRotation: {x: 0.2588184, y: -0.965926, z: 0.00000008195638, w: 0.000002905726}
-  m_LocalPosition: {x: 9.055147, y: 0, z: -4.7500076}
+  m_LocalPosition: {x: 9.055147, y: 0, z: -2.0000076}
   m_LocalScale: {x: 1, y: 1, z: 2.2051}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6241,7 +6277,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 912133334}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: b
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &912133334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6363,7 +6411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 931011731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenuScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &931011731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6652,7 +6712,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh125358
+  m_Name: pb_Mesh54600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6974,6 +7034,7 @@ Transform:
   - {fileID: 469542169}
   - {fileID: 701200553}
   - {fileID: 58905294}
+  - {fileID: 1919009112}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7797,7 +7858,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1328787829}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LevelSelector
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1328787829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8058,7 +8131,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1468768634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: b
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1468768634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8324,7 +8409,6 @@ Transform:
   - {fileID: 515838752}
   - {fileID: 1832222153}
   - {fileID: 476633563}
-  - {fileID: 1919009112}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9498,7 +9582,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1766174175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenuScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1766174175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9699,7 +9795,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1806269698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseUnpauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1806269698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9841,7 +9949,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh125566
+  m_Name: pb_Mesh54902
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10082,7 +10190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1884382382}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1990952154}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenuScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1884382382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10484,12 +10604,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919009108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.5306163, y: 0.74999696, z: 0.3749776}
   m_LocalScale: {x: 5, y: 3, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1544833100}
-  m_RootOrder: 9
+  m_Father: {fileID: 1055739156}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1953500326
 LightingSettings:
@@ -10665,7 +10785,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1978336271
 MonoBehaviour:
@@ -10679,12 +10799,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510df9822325a364d9c42f0da23e3e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gatePrefab: {fileID: 8287642321203429104, guid: afa607dc3f73a2f43a4902b694ba5b5f,
+  GatePrefab: {fileID: 8287642321203429104, guid: afa607dc3f73a2f43a4902b694ba5b5f,
     type: 3}
-  _keyPrefab: {fileID: 2103622093545333340, guid: 80a325b660f8d384fafa53057da8f45e,
+  KeyPrefab: {fileID: 2103622093545333340, guid: 80a325b660f8d384fafa53057da8f45e,
     type: 3}
-  _gatePos: {fileID: 439416468}
-  _keyPos: {fileID: 423194125}
+  GatePos: {fileID: 439416468}
+  KeyPos: {fileID: 423194125}
+  FellIntoVoid: 0
+  IsLevelFailed: 0
+  IsPlayerDead: 0
 --- !u!4 &1978336272
 Transform:
   m_ObjectHideFlags: 0
@@ -10712,6 +10835,7 @@ GameObject:
   - component: {fileID: 1990952152}
   - component: {fileID: 1990952151}
   - component: {fileID: 1990952150}
+  - component: {fileID: 1990952154}
   m_Layer: 5
   m_Name: UI MANAGER
   m_TagString: Untagged
@@ -10808,6 +10932,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1990952154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990952149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d6c1733be75014dac3a72f1dfbd05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextLevelPanel: {fileID: 1784243592}
+  _pauseMenuPanel: {fileID: 372980182}
+  _levelfailedPanel: {fileID: 2009093352}
+  _fellIntoVoidPanel: {fileID: 108970027}
+  _levelButton: {fileID: 0}
+  _progressBar: {fileID: 749492933}
+  _loadingScreen: {fileID: 526826089}
 --- !u!1 &2005177055
 GameObject:
   m_ObjectHideFlags: 0
