@@ -30,14 +30,6 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         _nextLevelPanel.SetActive(true);
-        if (!PlayerPrefs.HasKey("level"))
-        {
-            PlayerPrefs.SetInt("level", _levelCounter);
-        }
-        else
-        {
-            _levelCounter++;
-        }
     }
     public void LevelFailedPanel(bool condition)
     {

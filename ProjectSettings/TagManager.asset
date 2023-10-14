@@ -11,8 +11,7 @@ TagManager:
   - Wall
   - temp
   - Level_1
-  - Level_2
-  - Level_3
+  - locked_levels
   layers:
   - Default
   - TransparentFX

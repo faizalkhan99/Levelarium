@@ -9,5 +9,6 @@ public class LevelTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
+
     }
 }
