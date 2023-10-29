@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject _nextLevelPanel;
     [SerializeField] GameObject _pauseMenuPanel;
+    [SerializeField] GameObject _pauseButton; 
     [SerializeField] GameObject _levelfailedPanel;
     [SerializeField] GameObject _fellIntoVoidPanel;
 
@@ -81,12 +82,14 @@ public class UIManager : MonoBehaviour
         if (condition)
         {
             Time.timeScale = 0f;
-            _pauseMenuPanel.SetActive(true);
+            _pauseButton.SetActive(!condition);
+            _pauseMenuPanel.SetActive(condition);
         }
         else
         {
             Time.timeScale = 1f;
-            _pauseMenuPanel.SetActive(false);
+            _pauseButton.SetActive(!condition);
+            _pauseMenuPanel.SetActive(condition);
         }
     }
 

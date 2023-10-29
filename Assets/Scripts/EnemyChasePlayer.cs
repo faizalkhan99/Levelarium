@@ -25,16 +25,17 @@ public class EnemyChasePlayer : MonoBehaviour
         DisplayHealth();
         _healthBar.gameObject.transform.rotation = Quaternion.identity;
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             _player.Damage(1f); //player damage
             Destroy(gameObject); //enemy destroy
             _camShakeHandle.EnableShake();
         }
 
-        if (other.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
             //damage enemy
             EnemyDamage(_enemyDamage);
@@ -42,7 +43,6 @@ public class EnemyChasePlayer : MonoBehaviour
             _camShakeHandle.EnableShake();
 
         }
-
     }
 
     private void SendEnemyToPlayer()

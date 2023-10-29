@@ -8147,6 +8147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextLevelPanel: {fileID: 251857921}
   _pauseMenuPanel: {fileID: 286847782}
+  _pauseButton: {fileID: 1904788177}
   _levelfailedPanel: {fileID: 1711375653}
   _fellIntoVoidPanel: {fileID: 1876309507}
   _levelButton: {fileID: 0}
