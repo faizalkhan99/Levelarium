@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _pauseButton; 
     [SerializeField] GameObject _levelfailedPanel;
     [SerializeField] GameObject _fellIntoVoidPanel;
+    [SerializeField] GameObject _creditsPanel;
+    [SerializeField] GameObject _mainmenuPanel;
 
     [SerializeField] GameObject _levelButton;
 
@@ -95,7 +97,30 @@ public class UIManager : MonoBehaviour
 
     public void FellIntoVoid()
     {
-        _fellIntoVoidPanel.SetActive(true);
+        if (_fellIntoVoidPanel != null) _fellIntoVoidPanel.SetActive(true);
+    }
+
+    public void TurnOFFEverything()
+    {
+        if(_nextLevelPanel != null) _nextLevelPanel.SetActive(false);
+        if(_pauseMenuPanel != null) _pauseMenuPanel.SetActive(false);
+        if (_pauseButton != null) _pauseButton.SetActive(false);
+        if (_levelfailedPanel != null) _levelfailedPanel.SetActive(false);
+        if (_fellIntoVoidPanel != null) _fellIntoVoidPanel.SetActive(false);
+        if(_mainmenuPanel != null) _mainmenuPanel.SetActive(false);
+        if(_creditsPanel != null) _creditsPanel.SetActive(false);
+    }
+    public void Credits()
+    {
+        TurnOFFEverything();
+        _creditsPanel.SetActive(true); 
+    }
+    public void FromCreditsToMainMenu()
+    {
+        TurnOFFEverything();
+        _mainmenuPanel.SetActive(true);
+          
+
     }
     public void Quit()
     {

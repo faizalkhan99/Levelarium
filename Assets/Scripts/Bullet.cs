@@ -1,13 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         
-        if (other.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }

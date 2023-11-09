@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        if (_rigidbody == null) Debug.Log("Player:RigidBody:NULL");
+        if (!TryGetComponent<Rigidbody>(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
     }
     void Update()
     {
@@ -72,8 +71,8 @@ public class PlayerMovement : MonoBehaviour
         _playerHealth -= damage;
         if (_playerHealth <= 0)
         {
-            Debug.Log("lmao ded, try again");
             UIManager.Instance.LevelFailedPanel(true);
+            Destroy(gameObject);
         }
     }
 

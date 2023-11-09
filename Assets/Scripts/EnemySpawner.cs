@@ -46,9 +46,9 @@ public class EnemySpawner : MonoBehaviour
         _healthBar.value = _health;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
             _health -= _damageDealt;
