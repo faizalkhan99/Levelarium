@@ -12,10 +12,10 @@ public class EnemyChasePlayer : MonoBehaviour
 
     [SerializeField] private float _enemyHealth;
     [SerializeField] private float _enemyDamage;
+
     void Awake()
     {
         _camShakeHandle = GameObject.Find("Main Camera").GetComponent<CamShake>();
-        
         _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
         _agent = GetComponent<NavMeshAgent>();
     }
@@ -32,6 +32,7 @@ public class EnemyChasePlayer : MonoBehaviour
         {
             _player.Damage(1f); //player damage
             Destroy(gameObject); //enemy destroy
+            _player._killCount++; //_killCount++ here
             _camShakeHandle.EnableShake();
         }
 
@@ -58,6 +59,7 @@ public class EnemyChasePlayer : MonoBehaviour
          _enemyHealth -= damage; //dry karle ise
         if (_enemyHealth <= 0)
         {
+            _player._killCount++; //_killCount++ here
             Destroy(gameObject);
         }
         

@@ -6,14 +6,13 @@ public class PlayerMovement : MonoBehaviour
     public FixedJoystick joystick;
 
     [SerializeField] public float _speed;
+    [SerializeField] public int _killCount;
     [SerializeField] float _playerHealth;
     [SerializeField] float _rotationSpeed;
 
     [SerializeField] Slider _playerHealthbar;
     
     [SerializeField] Rigidbody _rigidbody;
-
-
     private void Awake()
     {
         if (!TryGetComponent<Rigidbody>(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
@@ -29,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
     }
+
     void HandleMovement()
     {
 
@@ -55,17 +55,6 @@ public class PlayerMovement : MonoBehaviour
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, (1000 * _rotationSpeed) * Time.deltaTime);
             _rigidbody.MoveRotation(playerRotation);
         }
-
-
-
-
-        /* _rigidbody.AddForce((1000 * _speed) * Time.deltaTime * new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized, ForceMode.Force);
-         float moveAngle = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
-         if (joystick.Horizontal != 0 || joystick.Vertical != 0)
-         {
-             Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
-             transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, (1000 *_rotationSpeed) * Time.deltaTime);
-         }*/
     }
     void DisplayHealth()
     {
@@ -78,10 +67,11 @@ public class PlayerMovement : MonoBehaviour
         if (_playerHealth <= 0)
         {
             UIManager.Instance.LevelFailedPanel(true);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
+  
     private void CheckFall()
     {
         if(transform.position.y <= -20.0f)
