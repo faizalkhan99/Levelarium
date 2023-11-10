@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public FixedJoystick joystick;
+    public FixedJoystick joystick;
 
-    [SerializeField] float _speed;
+    [SerializeField] public float _speed;
     [SerializeField] float _playerHealth;
     [SerializeField] float _rotationSpeed;
 
@@ -18,16 +18,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!TryGetComponent<Rigidbody>(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
     }
-    void Update()
+
+    private void Update()
     {
-        HandleMovement();
         DisplayHealth();
         _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
         CheckFall();
-        
+    }
+    void FixedUpdate()
+    {
+        HandleMovement();
     }
     void HandleMovement()
     {
+
 
         float offsetAngle = -45.0f; // The angle by which you want to offset the movement.
 
@@ -39,15 +43,17 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply force to the rigidbody with the offset direction.
         _rigidbody.AddForce((1000 * _speed) * Time.deltaTime * rotatedDirection, ForceMode.Force);
-
+        //_rigidbody.MovePosition(_rigidbody.position + (_speed) * Time.deltaTime * rotatedDirection);
+        
         // Calculate the rotation angle for the offset direction.
         float moveAngle = Mathf.Atan2(rotatedDirection.x, rotatedDirection.z) * Mathf.Rad2Deg;
-
+        
         if (rotatedDirection != Vector3.zero)
         {
             // Rotate the player towards the offset direction.
             Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, (1000 * _rotationSpeed) * Time.deltaTime);
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, (1000 * _rotationSpeed) * Time.deltaTime);
+            _rigidbody.MoveRotation(playerRotation);
         }
 
 
