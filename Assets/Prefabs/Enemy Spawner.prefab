@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7632786673297196500}
   - component: {fileID: 7632786673297196501}
   - component: {fileID: 7632786673297196502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7632786673388052215}
   - component: {fileID: 7632786673388052214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 7632786673411963606}
   - component: {fileID: 7632786673411963604}
   - component: {fileID: 7632786673411963605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 7632786673604275954}
   - component: {fileID: 7632786673604275955}
   - component: {fileID: 7632786673604275854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy Spawner
   m_TagString: Spawner
   m_Icon: {fileID: 0}
@@ -381,8 +381,12 @@ MonoBehaviour:
   _keyPrefab: {fileID: 2103622093545333340, guid: 80a325b660f8d384fafa53057da8f45e,
     type: 3}
   _keyPos: {fileID: 0}
-  _health: 25
+  _health: 15
   _damageDealt: 1
+  _enemyHealth: 3
+  _damageDealtByenemy: 1
+  _damageGivenByEnemy: 1
+  _timeBetweenSpawn: 4
   _healthBar: {fileID: 7632786673388052214}
   _spawnPoints:
   - {fileID: 0}
@@ -391,6 +395,7 @@ MonoBehaviour:
   - {fileID: 0}
   _enemyPrefab: {fileID: 4999646168496087585, guid: ab6d6441e941ca34293ebb2cabdd8c31,
     type: 3}
+  _ECP: {fileID: 4999646168496087579, guid: ab6d6441e941ca34293ebb2cabdd8c31, type: 3}
 --- !u!1 &7632786675090746781
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7632786675090746780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +444,7 @@ GameObject:
   - component: {fileID: 7632786675337199664}
   - component: {fileID: 7632786675337201614}
   - component: {fileID: 7632786675337201615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

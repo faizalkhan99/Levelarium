@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 521607280}
   - component: {fileID: 521607281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1188165056}
   - component: {fileID: 1188165058}
   - component: {fileID: 1188165057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 2034068059}
   - component: {fileID: 2034068058}
   - component: {fileID: 2034068057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 2061735416}
   - component: {fileID: 2061735418}
   - component: {fileID: 2061735417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2147142011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 5319995920108314347}
   - component: {fileID: 1416900386574834603}
   - component: {fileID: 1564452149502306987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ears
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 4999646168496087579}
   - component: {fileID: 4999646168496087578}
   - component: {fileID: 6500939666762712266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0.5
-  m_WalkableMask: 5
+  m_WalkableMask: 13
   m_ObstacleAvoidanceType: 4
 --- !u!54 &6500939666762712266
 Rigidbody:
@@ -617,7 +617,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 10
   m_CollisionDetection: 1
 --- !u!1 &6353621841950825693
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 6461845665030762915}
   - component: {fileID: 6725338095250296478}
   - component: {fileID: 3487192370354950714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ears (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 2113253738545806831}
   - component: {fileID: 815717386807906065}
   - component: {fileID: 3950778191976390245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

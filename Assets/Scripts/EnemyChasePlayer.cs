@@ -10,9 +10,16 @@ public class EnemyChasePlayer : MonoBehaviour
 
     [SerializeField] private Slider _healthBar;
 
-    [SerializeField] private float _enemyHealth;
-    [SerializeField] private float _enemyDamage;
+    [SerializeField] private int _enemyHealth;
+    [SerializeField] private int _enemyDamage;
+    [SerializeField] private int _damageGivenByEnemy;
 
+    public void InitializeEnemyHealth(int health, int damageDealt, int damageGiven)
+    {
+        _enemyHealth = health;
+        _enemyDamage = damageDealt;
+        _damageGivenByEnemy = damageGiven;
+    }
     void Awake()
     {
         _camShakeHandle = GameObject.Find("Main Camera").GetComponent<CamShake>();
@@ -30,9 +37,8 @@ public class EnemyChasePlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _player.Damage(1f); //player damage
+            _player.Damage(_damageGivenByEnemy); //player damage
             Destroy(gameObject); //enemy destroy
-            _player._killCount++; //_killCount++ here
             _camShakeHandle.EnableShake();
         }
 
@@ -54,12 +60,11 @@ public class EnemyChasePlayer : MonoBehaviour
             _agent.destination = _player.transform.position;
         }
     }
-    public void EnemyDamage(float damage)
+    public void EnemyDamage(int damage)
     {
-         _enemyHealth -= damage; //dry karle ise
+         _enemyHealth -= damage; //dry run karle ise
         if (_enemyHealth <= 0)
         {
-            _player._killCount++; //_killCount++ here
             Destroy(gameObject);
         }
         

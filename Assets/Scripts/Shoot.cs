@@ -13,5 +13,6 @@ public class Shoot : MonoBehaviour
         {
             rb.AddForce((_bulletForce * 1000) * Time.deltaTime * (_shootPos.forward), ForceMode.Impulse);
         }
+        Destroy(bullet, 5.0f);
     }
 }

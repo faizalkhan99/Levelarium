@@ -7,10 +7,14 @@ public class EnemySpawner : MonoBehaviour
     CamShake _camShake;
 
     [SerializeField] private GameObject _keyPrefab;
-    [SerializeField] Transform _keyPos; 
 
     [SerializeField] private int _health;
     [SerializeField] private int _damageDealt;
+
+    [SerializeField] private int _enemyHealth;
+    [SerializeField] private int _damageDealtByenemy;
+    [SerializeField] private int _damageGivenByEnemy;
+
     [SerializeField] private float _timeBetweenSpawn;
 
     [SerializeField] private Slider _healthBar;
@@ -18,12 +22,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] GameObject _enemyPrefab;
 
+    [SerializeField] EnemyChasePlayer _ECP;
+
     private void Awake()
     {
         _camShake = GameObject.Find("Main Camera").GetComponent<CamShake>();
     }
     private void Start()
     {
+        _ECP.InitializeEnemyHealth(_enemyHealth, _damageDealtByenemy, _damageGivenByEnemy);
         StartCoroutine(SpanwEnemies());
     }
     IEnumerator SpanwEnemies()
@@ -37,14 +44,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-
         DisplayHealth();
     }
 
-    void DisplayHealth()
-    {
-        _healthBar.value = _health;
-    }
+    void DisplayHealth() => _healthBar.value = _health;
+    
 
     private void OnCollisionEnter(Collision other)
     {
