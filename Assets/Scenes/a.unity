@@ -375,7 +375,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-212512
+  m_Name: pb_Mesh-24418
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: 241993469}
   - component: {fileID: 241993468}
   - component: {fileID: 241993467}
+  - component: {fileID: 241993472}
   m_Layer: 0
   m_Name: MP 3
   m_TagString: Untagged
@@ -629,10 +630,9 @@ MonoBehaviour:
   - {fileID: 243358420}
   - {fileID: 246871046}
   currentWaypoint: {fileID: 0}
-  playerTransform: {fileID: 0}
   currentWaypointIndex: 0
   waypointreaxhedThreshold: 0.1
-  pauseTime: 0.5
+  pauseTime: 1
   _moveSpeed: 5
 --- !u!65 &241993468
 BoxCollider:
@@ -713,6 +713,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241993465}
   m_Mesh: {fileID: 9037020146243657503, guid: 191eca36dbeca7f4bb941a8b5e32c1f8, type: 3}
+--- !u!114 &241993472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241993465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc6ea65d682c1b458d78c1bb43ae661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1583244277}
 --- !u!1 &243358419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 3695610062064920669, guid: c2eb056675325554da43136cbcf689b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23
+      value: 23.75
       objectReference: {fileID: 0}
     - target: {fileID: 3695610062064920669, guid: c2eb056675325554da43136cbcf689b5,
         type: 3}
@@ -4611,6 +4624,7 @@ GameObject:
   - component: {fileID: 835796458}
   - component: {fileID: 835796457}
   - component: {fileID: 835796456}
+  - component: {fileID: 835796461}
   m_Layer: 0
   m_Name: MP 2
   m_TagString: Untagged
@@ -4649,7 +4663,6 @@ MonoBehaviour:
   - {fileID: 258841626}
   - {fileID: 1129640346}
   currentWaypoint: {fileID: 0}
-  playerTransform: {fileID: 0}
   currentWaypointIndex: 0
   waypointreaxhedThreshold: 0.1
   pauseTime: 2
@@ -4733,6 +4746,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835796454}
   m_Mesh: {fileID: 9037020146243657503, guid: 191eca36dbeca7f4bb941a8b5e32c1f8, type: 3}
+--- !u!114 &835796461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835796454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc6ea65d682c1b458d78c1bb43ae661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1583244277}
 --- !u!1 &836090304
 GameObject:
   m_ObjectHideFlags: 0
@@ -12068,6 +12094,7 @@ GameObject:
   - component: {fileID: 8335509809151329429}
   - component: {fileID: 8335509809151329431}
   - component: {fileID: 8335509809151329430}
+  - component: {fileID: 8335509809151329432}
   m_Layer: 0
   m_Name: MP 1
   m_TagString: Untagged
@@ -12133,10 +12160,9 @@ MonoBehaviour:
   - {fileID: 1938118845}
   - {fileID: 398048236}
   currentWaypoint: {fileID: 0}
-  playerTransform: {fileID: 0}
   currentWaypointIndex: 0
   waypointreaxhedThreshold: 0.1
-  pauseTime: 0.5
+  pauseTime: 1
   _moveSpeed: 5
 --- !u!65 &8335509809151329430
 BoxCollider:
@@ -12167,3 +12193,16 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8335509809151329432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7542775601477739841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc6ea65d682c1b458d78c1bb43ae661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1583244277}

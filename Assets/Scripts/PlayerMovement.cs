@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private Renderer _renderer;
     private void Awake()
     {
-        if (!TryGetComponent<Rigidbody>(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
-        if (!TryGetComponent<Renderer>(out _renderer)) Debug.Log("Player:Renderer:NULL");
+        if (!TryGetComponent(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
+        if (!TryGetComponent(out _renderer)) Debug.Log("Player:Renderer:NULL");
     }
     private void Update()
     {
@@ -63,9 +63,6 @@ public class PlayerMovement : MonoBehaviour
             Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
             _rigidbody.MoveRotation(playerRotation); // Rotate the player towards the offset direction.
         }
-
-        /*Vector3 rotateDirection = Vector3.RotateTowards(transform.forward, new Vector3(joystick.Horizontal, 0f, joystick.Vertical), rotateSpeed * Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(rotateDirection);*/
     }
     void DisplayHealth() => _playerHealthbar.value = _playerHealth;
     public void Damage(int damage)

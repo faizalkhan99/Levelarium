@@ -38,16 +38,17 @@ public class EnemyChasePlayer : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _player.Damage(_damageGivenByEnemy); //player damage
-            Destroy(gameObject); //enemy destroy
             _camShakeHandle.EnableShake();
+            _player.ApplyKnockback(Vector3.back, 10.0f, 2.0f);
+            Destroy(gameObject); //enemy destroy
         }
 
         if (other.gameObject.CompareTag("Bullet"))
         {
             //damage enemy
             EnemyDamage(_enemyDamage);
-            Destroy(other.gameObject);  //bullet destroy
             _camShakeHandle.EnableShake();
+            Destroy(other.gameObject);  //bullet destroy
 
         }
     }
