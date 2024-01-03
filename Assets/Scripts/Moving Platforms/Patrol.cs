@@ -12,6 +12,12 @@ public class Patrol : MonoBehaviour
     [SerializeField] float _moveSpeed;
     private float _timer = 0f;
 
+    private Rigidbody _rb;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
     void Start()
     {
         if(wayPoints.Length > 0) currentWaypoint = wayPoints[currentWaypointIndex];
@@ -28,7 +34,17 @@ public class Patrol : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, Time.deltaTime * _moveSpeed);
+            Vector3 targetPosition = new Vector3(wayPoints[currentWaypointIndex].position.x, transform.position.y, wayPoints[currentWaypointIndex].position.z);
+
+            // Calculate the move direction and normalize it
+            Vector3 moveDirection = (targetPosition - transform.position).normalized;
+
+            // Calculate the new position using MovePosition
+            Vector3 newPosition = transform.position + moveDirection * _moveSpeed * Time.deltaTime;
+
+            // Move the Rigidbody to the new position
+            _rb.MovePosition(newPosition);
+            //transform.position = Vector3.MoveTowards(transform.position, new Vector3(currentWaypoint.position.x, transform.position.y, currentWaypoint.position.z), Time.deltaTime * _moveSpeed);
             if (Vector3.Distance(transform.position, currentWaypoint.position) < waypointreaxhedThreshold)
             {
                 _timer = pauseTime;

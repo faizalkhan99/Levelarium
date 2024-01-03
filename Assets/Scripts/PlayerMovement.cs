@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _dampingForce;
     [SerializeField] float _flickerInterval = 0.1f;
     [SerializeField] float _suicideHeight;
+    [SerializeField] float _rotationSpeed;
     [SerializeField] Slider _playerHealthbar;
 
     [SerializeField] Rigidbody _rigidbody;
@@ -20,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
         if (!TryGetComponent(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
         if (!TryGetComponent(out _renderer)) Debug.Log("Player:Renderer:NULL");
     }
-    private bool temp = false;
     private void Update()
     {
         Time.timeScale = 1;
@@ -53,20 +53,23 @@ public class PlayerMovement : MonoBehaviour
     {
         float offsetAngle = -45.0f; // The angle by which you want to offset the movement.
         Vector3 direction = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
+        
         Quaternion rotation = Quaternion.Euler(0, offsetAngle, 0); // Apply the offset angle to the direction vector.
         Vector3 rotatedDirection = rotation * direction;
         Vector3 force = (1000 * _speed) * Time.deltaTime * rotatedDirection;
+        
         if (direction == Vector3.zero)
         {
             force += -_rigidbody.velocity.normalized * _dampingForce;
         }
         _rigidbody.AddForce(force, ForceMode.Force);
+        
         float moveAngle = Mathf.Atan2(rotatedDirection.x, rotatedDirection.z) * Mathf.Rad2Deg; // Calculate the rotation angle for the offset direction.
-
         if (rotatedDirection != Vector3.zero)
         {
             Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
-            _rigidbody.MoveRotation(playerRotation); // Rotate the player towards the offset direction.
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, _rotationSpeed * 100 * Time.deltaTime);
+            //_rigidbody.MoveRotation(playerRotation); // Rotate the player towards the offset direction.
         }
         
     }
