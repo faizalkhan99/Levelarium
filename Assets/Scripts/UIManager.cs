@@ -41,12 +41,13 @@ public class UIManager : MonoBehaviour
     }
     public void LoadScene(string sceneName)
     {
+        Time.timeScale = 1.0f;
         _loadingScreen.SetActive(true);
         StartCoroutine(LoadingAsync(sceneName));
+        Debug.Log(Time.timeScale);
     }
     IEnumerator LoadingAsync(string sceneName)
     {
-        Time.timeScale = 1.0f;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         while (!operation.isDone)
         {
@@ -98,6 +99,7 @@ public class UIManager : MonoBehaviour
 
     public void FellIntoVoid()
     {
+        //Time.timeScale = 0f;
         if (_fellIntoVoidPanel != null) _fellIntoVoidPanel.SetActive(true);
     }
 

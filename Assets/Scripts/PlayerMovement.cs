@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float _speed;
     [SerializeField] int _playerHealth;
     [SerializeField] float _dampingForce;
-    [SerializeField] private float flickerInterval = 0.1f;
+    [SerializeField] float _flickerInterval = 0.1f;
+    [SerializeField] float _suicideHeight;
     [SerializeField] Slider _playerHealthbar;
 
     [SerializeField] Rigidbody _rigidbody;
@@ -19,12 +20,16 @@ public class PlayerMovement : MonoBehaviour
         if (!TryGetComponent(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
         if (!TryGetComponent(out _renderer)) Debug.Log("Player:Renderer:NULL");
     }
+    private bool temp = false;
     private void Update()
     {
+        Time.timeScale = 1;
+
         DisplayHealth();
         _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
         CheckFall();
     }
+    
     void FixedUpdate()
     {
         HandleMovement();
@@ -63,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
             Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
             _rigidbody.MoveRotation(playerRotation); // Rotate the player towards the offset direction.
         }
+        
     }
     void DisplayHealth() => _playerHealthbar.value = _playerHealth;
     public void Damage(int damage)
@@ -76,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void CheckFall()
     {
-        if (transform.position.y <= -10.0f)
+        if (transform.position.y <= -_suicideHeight)
         {
             UIManager.Instance.FellIntoVoid();
         }
@@ -93,8 +99,8 @@ public class PlayerMovement : MonoBehaviour
         while (flickerTimer < knockBackDuration)
         {
             _renderer.enabled = !_renderer.enabled;
-            yield return new WaitForSeconds(flickerInterval);
-            flickerTimer += flickerInterval;
+            yield return new WaitForSeconds(_flickerInterval);
+            flickerTimer += _flickerInterval;
         }
 
         _renderer.enabled = true;
