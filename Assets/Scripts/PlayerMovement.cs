@@ -1,18 +1,21 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public FixedJoystick joystick;
+    public Vector3 vect;
 
-    [SerializeField] public float _speed;
+    public float _speed;
     [SerializeField] int _playerHealth;
     [SerializeField] float _dampingForce;
     [SerializeField] float _flickerInterval = 0.1f;
     [SerializeField] float _suicideHeight;
     [SerializeField] float _rotationSpeed;
     [SerializeField] Slider _playerHealthbar;
+    [SerializeField] Vector3 force;
 
     [SerializeField] Rigidbody _rigidbody;
     private Renderer _renderer;
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.useGravity = true;
         }
     }
+    public bool _isStandingOnMovingPlatform = false;
     void HandleMovement()
     {
         float offsetAngle = -45.0f; // The angle by which you want to offset the movement.
@@ -56,21 +60,35 @@ public class PlayerMovement : MonoBehaviour
         
         Quaternion rotation = Quaternion.Euler(0, offsetAngle, 0); // Apply the offset angle to the direction vector.
         Vector3 rotatedDirection = rotation * direction;
-        Vector3 force = (1000 * _speed) * Time.deltaTime * rotatedDirection;
-        
-        if (direction == Vector3.zero)
+        force = (100 * _speed) * Time.fixedDeltaTime * rotatedDirection;
+
+        /* if (direction.sqrMagnitude <= 0.1f )
+         {*/
+        if (transform.parent != null && transform.parent.CompareTag("MovingPlatform"))
         {
-            force += -_rigidbody.velocity.normalized * _dampingForce;
+            _isStandingOnMovingPlatform = true;
+            GetComponent<Collider>().material.dynamicFriction = 99999f;
+            if (direction.magnitude > 0.2f)
+            {
+                GetComponent<Collider>().material.dynamicFriction = 1.0f;
+                Debug.Log(GetComponentInParent<Rigidbody>().velocity + (100 * _speed * Time.fixedDeltaTime * rotatedDirection));
+            }
         }
-        _rigidbody.AddForce(force, ForceMode.Force);
+
+            //force += -_rigidbody.velocity.normalized * _dampingForce; //isse kaapta hai.
+        //}
+        //else GetComponent<Collider>().material.dynamicFriction = 1.0f;
+        _rigidbody.velocity = force;
+        //_rigidbody.velocity = force + vect;
+        //_rigidbody.MovePosition(_rigidbody.position + _speed * direction *Time.fixedDeltaTime);
         
         float moveAngle = Mathf.Atan2(rotatedDirection.x, rotatedDirection.z) * Mathf.Rad2Deg; // Calculate the rotation angle for the offset direction.
         if (rotatedDirection != Vector3.zero)
         {
             Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, _rotationSpeed * 100 * Time.deltaTime);
-            //_rigidbody.MoveRotation(playerRotation); // Rotate the player towards the offset direction.
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, _rotationSpeed * 100 * Time.fixedDeltaTime);
         }
+        
         
     }
     void DisplayHealth() => _playerHealthbar.value = _playerHealth;

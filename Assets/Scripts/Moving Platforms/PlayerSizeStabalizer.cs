@@ -7,9 +7,10 @@ public class PlayerSizeStabalizer : MonoBehaviour
     private float playerOriginalSpeed;
     [SerializeField] Transform playerTransform;
     PlayerMovement player;
-
+    Rigidbody rb;
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
     void Start()
@@ -20,7 +21,6 @@ public class PlayerSizeStabalizer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //player._speed += _moveSpeed; //new speed = original speed + platform speed => new speed = 2+5 => 7
             playerTransform.parent = transform;
         }
     }

@@ -34,13 +34,13 @@ public class Patrol : MonoBehaviour
         }
         else
         {
-            Vector3 targetPosition = new Vector3(wayPoints[currentWaypointIndex].position.x, transform.position.y, wayPoints[currentWaypointIndex].position.z);
+            Vector3 targetPosition = new(wayPoints[currentWaypointIndex].position.x, transform.position.y, wayPoints[currentWaypointIndex].position.z);
 
             // Calculate the move direction and normalize it
             Vector3 moveDirection = (targetPosition - transform.position).normalized;
 
             // Calculate the new position using MovePosition
-            Vector3 newPosition = transform.position + moveDirection * _moveSpeed * Time.deltaTime;
+            Vector3 newPosition = transform.position + _moveSpeed * Time.fixedDeltaTime * moveDirection;
 
             // Move the Rigidbody to the new position
             _rb.MovePosition(newPosition);

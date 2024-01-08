@@ -13,6 +13,7 @@ TagManager:
   - Level_1
   - locked_levels
   - Ramp
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
