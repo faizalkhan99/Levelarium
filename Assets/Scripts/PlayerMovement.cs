@@ -26,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        Time.timeScale = 1;
-
+        //Time.timeScale = 1;
         DisplayHealth();
         _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
         CheckFall();
@@ -37,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
     }
+ 
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -62,8 +62,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 rotatedDirection = rotation * direction;
         force = (100 * _speed) * Time.fixedDeltaTime * rotatedDirection;
 
-        /* if (direction.sqrMagnitude <= 0.1f )
-         {*/
         if (transform.parent != null && transform.parent.CompareTag("MovingPlatform"))
         {
             _isStandingOnMovingPlatform = true;
@@ -74,12 +72,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log(GetComponentInParent<Rigidbody>().velocity + (100 * _speed * Time.fixedDeltaTime * rotatedDirection));
             }
         }
-
-            //force += -_rigidbody.velocity.normalized * _dampingForce; //isse kaapta hai.
-        //}
-        //else GetComponent<Collider>().material.dynamicFriction = 1.0f;
         _rigidbody.velocity = force;
-        //_rigidbody.velocity = force + vect;
         //_rigidbody.MovePosition(_rigidbody.position + _speed * direction *Time.fixedDeltaTime);
         
         float moveAngle = Mathf.Atan2(rotatedDirection.x, rotatedDirection.z) * Mathf.Rad2Deg; // Calculate the rotation angle for the offset direction.
@@ -87,9 +80,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion playerRotation = Quaternion.Euler(0, moveAngle, 0);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, _rotationSpeed * 100 * Time.fixedDeltaTime);
-        }
-        
-        
+        }        
     }
     void DisplayHealth() => _playerHealthbar.value = _playerHealth;
     public void Damage(int damage)
@@ -110,8 +101,11 @@ public class PlayerMovement : MonoBehaviour
     }
     public void ApplyKnockback(Vector3 knockBackDirection, float knockBackForce, float knockBackDuration)
     {
-        _rigidbody.AddForce(knockBackDirection * knockBackForce, ForceMode.Impulse);
-        StartCoroutine(ApplyKnockbackDuration(knockBackDuration));
+        if (gameObject.activeSelf)
+        {
+            _rigidbody.AddForce(knockBackDirection * knockBackForce, ForceMode.Impulse);
+            StartCoroutine(ApplyKnockbackDuration(knockBackDuration));
+        }
     }
     private IEnumerator ApplyKnockbackDuration(float knockBackDuration)
     {

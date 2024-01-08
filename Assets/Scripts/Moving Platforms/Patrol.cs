@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Patrol : MonoBehaviour
@@ -8,14 +9,18 @@ public class Patrol : MonoBehaviour
     [SerializeField] int currentWaypointIndex = 0;
     
     [SerializeField] float waypointreaxhedThreshold = 0.1f;
-    [SerializeField] float pauseTime = 0.5f;
+    public float pauseTime = 0.5f;
     [SerializeField] float _moveSpeed;
     private float _timer = 0f;
+    [SerializeField] private bool _isMoving = true;
+
+    [SerializeField] private GameObject _boundary;
 
     private Rigidbody _rb;
 
     private void Awake()
     {
+       if(_boundary) _boundary.SetActive(false);
         _rb = GetComponent<Rigidbody>();
     }
     void Start()
@@ -44,13 +49,23 @@ public class Patrol : MonoBehaviour
 
             // Move the Rigidbody to the new position
             _rb.MovePosition(newPosition);
-            //transform.position = Vector3.MoveTowards(transform.position, new Vector3(currentWaypoint.position.x, transform.position.y, currentWaypoint.position.z), Time.deltaTime * _moveSpeed);
             if (Vector3.Distance(transform.position, currentWaypoint.position) < waypointreaxhedThreshold)
             {
+                if (_boundary) _boundary.SetActive(false); //boundary invisible   
                 _timer = pauseTime;
                 SwitchWaypoint();
             }
+            else
+            {
+                if (_boundary) _boundary.SetActive(true); //boundary visible
+            }
         }
+    }
+    private IEnumerator Pause(bool condition)
+    {
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("waited");
+        _isMoving = false;
     }
     void SwitchWaypoint()
     {

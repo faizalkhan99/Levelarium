@@ -88,12 +88,14 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 0f;
             _pauseButton.SetActive(!condition);
             _pauseMenuPanel.SetActive(condition);
+            AudioManager.Instance.PauseBGM();
         }
         else
         {
             Time.timeScale = 1f;
             _pauseButton.SetActive(!condition);
             _pauseMenuPanel.SetActive(condition);
+            AudioManager.Instance.PlayBGM();
         }
     }
 
