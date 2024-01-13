@@ -61,12 +61,6 @@ public class Patrol : MonoBehaviour
             }
         }
     }
-    private IEnumerator Pause(bool condition)
-    {
-        yield return new WaitForSeconds(1.0f);
-        Debug.Log("waited");
-        _isMoving = false;
-    }
     void SwitchWaypoint()
     {
         if (currentWaypointIndex == wayPoints.Length - 1)

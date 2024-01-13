@@ -11,13 +11,15 @@ public class EnemyChasePlayer : MonoBehaviour
     [SerializeField] private Slider _healthBar;
 
     [SerializeField] private int _enemyHealth;
-    [SerializeField] private int _enemyDamage;
+    [SerializeField] private int _damageReceivedByEnemy;
     [SerializeField] private int _damageGivenByEnemy;
+    [SerializeField] private float knockBackDuration;
+    [SerializeField] private float knockBackForce;
 
     public void InitializeEnemyHealth(int health, int damageDealt, int damageGiven)
     {
         _enemyHealth = health;
-        _enemyDamage = damageDealt;
+        _damageReceivedByEnemy = damageDealt;
         _damageGivenByEnemy = damageGiven;
     }
     void Awake()
@@ -26,29 +28,43 @@ public class EnemyChasePlayer : MonoBehaviour
         _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
         _agent = GetComponent<NavMeshAgent>();
     }
+
+    private Vector3 lastFramePosition;
+    private Vector3 knockBackDirection;
+    private void Start()
+    {
+        lastFramePosition = transform.position;
+    }
+
     void Update()
     {
         SendEnemyToPlayer();
         DisplayHealth();
         _healthBar.gameObject.transform.rotation = Quaternion.identity;
+
+        Vector3 movementDirection = transform.position - lastFramePosition;
+
+        // Update knockBackDirection based on movement direction
+        knockBackDirection = movementDirection.normalized;
+
+        // Save current position for the next frame
+        lastFramePosition = transform.position;
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _player.Damage(_damageGivenByEnemy); //player damage
+            _player.Damage(_damageGivenByEnemy, knockBackDirection, knockBackForce, knockBackDuration);
             _camShakeHandle.EnableShake();
-            _player.ApplyKnockback(Vector3.back, 10.0f, 2.0f);
-            Destroy(gameObject); //enemy destroy
+            Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Bullet"))
         {
-            //damage enemy
-            EnemyDamage(_enemyDamage);
+            EnemyDamage(_damageReceivedByEnemy);
             _camShakeHandle.EnableShake();
-            Destroy(other.gameObject);  //bullet destroy
+            Destroy(other.gameObject);
 
         }
     }

@@ -3,16 +3,18 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Transform _shootPos;
+    [SerializeField] private Transform[] _shootPos;
     [SerializeField] private float _bulletForce;
     public void FireBullet()
     {
-        Debug.Log("Shoot:FireBulltet();");
-        GameObject bullet = Instantiate(_bulletPrefab, _shootPos.position, Quaternion.identity);
-        if(bullet.TryGetComponent<Rigidbody>(out var rb))
+        foreach (Transform shootPos in _shootPos)
         {
-            rb.AddForce(_bulletForce * (_shootPos.forward), ForceMode.Impulse);
+            GameObject bullet = Instantiate(_bulletPrefab, shootPos.position, Quaternion.identity);
+            if (bullet.TryGetComponent<Rigidbody>(out var rb))
+            {
+                rb.AddForce(_bulletForce * (shootPos.forward), ForceMode.Impulse);
+            }
+            Destroy(bullet, 5.0f);
         }
-        Destroy(bullet, 5.0f);
     }
 }

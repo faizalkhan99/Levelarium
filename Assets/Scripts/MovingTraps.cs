@@ -1,22 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingTraps : MonoBehaviour
 {
-    private Vector3 knockBackDirection = Vector3.back;
+    private Vector3 knockBackDirection = Vector3.forward;
     [SerializeField] private float knockBackDuration;
     [SerializeField] private float knockBackForce;
     [SerializeField] private int _damageGivenToPlayer;
+    private Vector3 lastFramePosition;
+    private void Start()
+    {
+        lastFramePosition = transform.position;
+    }
+    private void Update()
+    {
+        // Calculate the movement direction since the last frame
+        Vector3 movementDirection = transform.position - lastFramePosition;
+        // Update knockBackDirection based on movement direction
+        knockBackDirection = movementDirection.normalized;
+        // Save current position for the next frame
+        lastFramePosition = transform.position;
+    }
     private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            PlayerMovement _player = other.gameObject.GetComponent<PlayerMovement>();
-            if(_player != null)
+            if(other.gameObject.TryGetComponent<PlayerMovement>(out var _player))
             {
-                _player.ApplyKnockback(knockBackDirection, knockBackForce, knockBackDuration);
-                _player.Damage(_damageGivenToPlayer);
+                _player.Damage(_damageGivenToPlayer, knockBackDirection, knockBackForce, knockBackDuration);
+                
             }
         }
     }
