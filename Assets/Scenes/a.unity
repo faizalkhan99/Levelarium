@@ -12219,6 +12219,8 @@ MonoBehaviour:
   _suicideHeight: 20
   _rotationSpeed: 5
   _playerHealthbar: {fileID: 3695610061575173823}
+  canTakeDamage: 1
+  damageCooldown: 1
   force: {x: 0, y: 0, z: 0}
   _rigidbody: {fileID: 3695610061981837712}
   _isStandingOnMovingPlatform: 0
@@ -12236,7 +12238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 3064289071581504355, guid: 5df5d006a9c464543828ca4c2723c177,
     type: 3}
-  _shootPos: {fileID: 3695610061889164618}
+  _shootPos:
+  - {fileID: 0}
   _bulletForce: 5
 --- !u!114 &3695610061981837743
 MonoBehaviour:
