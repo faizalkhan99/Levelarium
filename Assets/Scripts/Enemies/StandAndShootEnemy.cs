@@ -39,11 +39,9 @@ public class StandAndShootEnemy : MonoBehaviour
     {
         while (_shooting)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2.0f);
             if (_shoot) _shoot.FireBullet();
-            Debug.Log("StandAndShootEnemy:ShootAtPlayer();");
         }
-        Debug.Log("StandAndShootEnemy:ShootAtPlayer():Stopped Shooting;");
     }
 
     private void OnTriggerExit(Collider other)

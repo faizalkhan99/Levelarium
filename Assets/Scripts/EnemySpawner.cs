@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,27 +17,31 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _damageGivenByEnemy;
 
     [SerializeField] private float _timeBetweenSpawn;
+    [SerializeField] private bool _spawningEnemies= false;
 
     [SerializeField] private Slider _healthBar;
 
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] GameObject _enemyPrefab;
+    [SerializeField] GameObject _gate;
+
 
     [SerializeField] EnemyChasePlayer _ECP;
 
     private void Awake()
     {
+        _gate.SetActive(false);
         _camShake = GameObject.Find("Main Camera").GetComponent<CamShake>();
     }
     private void Start()
     {
         _ECP.InitializeEnemyHealth(_enemyHealth, _damageDealtByenemy, _damageGivenByEnemy);
-        StartCoroutine(SpanwEnemies());
     }
     IEnumerator SpanwEnemies()
     {
-        while (gameObject)
+        while (_spawningEnemies)
         {
+            Debug.Log("Spawn kar BC");
             yield return new WaitForSeconds(_timeBetweenSpawn);
             Instantiate(_enemyPrefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity);
         }
@@ -48,15 +53,25 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void DisplayHealth() => _healthBar.value = _health;
-    
 
+    private void OnTriggerEnter(Collider other)
+    {
+        _gate.SetActive(true);
+        _spawningEnemies = true;
+        StartCoroutine(SpanwEnemies());
+    }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            Destroy(other.gameObject);
             _health -= _damageDealt;
-            if(_health <= 0) Die();
+            Destroy(other.gameObject);
+            if (_health <= 0)
+            {
+                _spawningEnemies = false;
+                _gate.SetActive(false);
+                Die();
+            }
         }
     }
     bool temp = false;
