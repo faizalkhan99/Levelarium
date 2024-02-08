@@ -12,16 +12,11 @@ public class EnemyChasePlayer : MonoBehaviour
 
     [SerializeField] private int _enemyHealth;
     [SerializeField] private int _damageReceivedByEnemy;
-    [SerializeField] private int _damageGivenByEnemy;
+
     [SerializeField] private float knockBackDuration;
     [SerializeField] private float knockBackForce;
 
-    public void InitializeEnemyHealth(int health, int damageDealt, int damageGiven)
-    {
-        _enemyHealth = health;
-        _damageReceivedByEnemy = damageDealt;
-        _damageGivenByEnemy = damageGiven;
-    }
+
     void Awake()
     {
         _camShakeHandle = GameObject.Find("Main Camera").GetComponent<CamShake>();
@@ -33,20 +28,18 @@ public class EnemyChasePlayer : MonoBehaviour
     private Vector3 knockBackDirection;
     private void Start()
     {
-        lastFramePosition = transform.position;
+
     }
 
     void Update()
     {
         SendEnemyToPlayer();
         DisplayHealth();
-        _healthBar.gameObject.transform.rotation = Quaternion.identity;
 
+        lastFramePosition = transform.position;
         Vector3 movementDirection = transform.position - lastFramePosition;
-
         // Update knockBackDirection based on movement direction
         knockBackDirection = movementDirection.normalized;
-
         // Save current position for the next frame
         lastFramePosition = transform.position;
     }
@@ -55,15 +48,22 @@ public class EnemyChasePlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _player.Damage(_damageGivenByEnemy, knockBackDirection, knockBackForce, knockBackDuration);
+            _player.Damage(_enemyHealth, knockBackDirection, knockBackForce, knockBackDuration);
             _camShakeHandle.EnableShake();
             Destroy(gameObject);
         }
 
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Player_Bullet"))
         {
+            //Spawn a particle effect of to show bullet impact.
             EnemyDamage(_damageReceivedByEnemy);
             _camShakeHandle.EnableShake();
+            Destroy(other.gameObject);
+
+        }
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            //Spawn a particle effect of to show bullet impact.
             Destroy(other.gameObject);
 
         }
@@ -79,7 +79,7 @@ public class EnemyChasePlayer : MonoBehaviour
     }
     public void EnemyDamage(int damage)
     {
-         _enemyHealth -= damage; //dry run karle ise
+        _enemyHealth -= damage; //dry run karle ise
         if (_enemyHealth <= 0)
         {
             Destroy(gameObject);
@@ -90,6 +90,6 @@ public class EnemyChasePlayer : MonoBehaviour
     void DisplayHealth()
     {
        _healthBar.value = _enemyHealth;
+       _healthBar.gameObject.transform.rotation = Quaternion.identity;
     }
-
 }

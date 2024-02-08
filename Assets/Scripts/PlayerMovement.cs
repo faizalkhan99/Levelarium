@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 vect;
 
     public float _speed;
-    [SerializeField] int _playerHealth;
+    [SerializeField] private int _health;
     [SerializeField] float _dampingForce;
     [SerializeField] float _flickerInterval = 0.1f;
     [SerializeField] float _suicideHeight;
@@ -36,20 +36,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         HandleMovement();
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ramp"))
-        {
-            _rigidbody.useGravity = false;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ramp"))
-        {
-            _rigidbody.useGravity = true;
-        }
     }
     public bool _isStandingOnMovingPlatform = false;
     void HandleMovement()
@@ -79,15 +65,15 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, _rotationSpeed * 100 * Time.fixedDeltaTime);
         }
     }
-    void DisplayHealth() => _playerHealthbar.value = _playerHealth;
+    void DisplayHealth() => _playerHealthbar.value = _health;
     public void Damage(int damage, Vector3 knockBackDirection, float knockBackForce, float knockBackDuration)
     {
         if (canTakeDamage)
         {
             StartCoroutine(DamageCooldown());
             ApplyKnockback(knockBackDirection, knockBackForce, knockBackDuration);
-            _playerHealth -= damage;
-            if (_playerHealth <= 0)
+            _health -= damage;
+            if (_health <= 0)
             {
                 UIManager.Instance.LevelFailedPanel(true);
                 gameObject.SetActive(false);
@@ -127,4 +113,18 @@ public class PlayerMovement : MonoBehaviour
         _renderer.enabled = true;
     }
 
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ramp"))
+        {
+            _rigidbody.useGravity = false;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ramp"))
+        {
+            _rigidbody.useGravity = true;
+        }
+    }*/
 }

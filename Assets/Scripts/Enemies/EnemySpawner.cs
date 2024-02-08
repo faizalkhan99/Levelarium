@@ -8,40 +8,33 @@ public class EnemySpawner : MonoBehaviour
     CamShake _camShake;
 
     [SerializeField] private GameObject _keyPrefab;
+    [SerializeField] GameObject _enemyPrefab;
+    [SerializeField] private GameObject _gate;
 
-    [SerializeField] private int _health;
     [SerializeField] private int _damageDealt;
 
-    [SerializeField] private int _enemyHealth;
-    [SerializeField] private int _damageDealtByenemy;
-    [SerializeField] private int _damageGivenByEnemy;
-
     [SerializeField] private float _timeBetweenSpawn;
-    [SerializeField] private bool _spawningEnemies= false;
+
+    [SerializeField] private int _health;
 
     [SerializeField] private Slider _healthBar;
 
     [SerializeField] Transform[] _spawnPoints;
-    [SerializeField] GameObject _enemyPrefab;
-    [SerializeField] GameObject _gate;
-
-
-    [SerializeField] EnemyChasePlayer _ECP;
 
     private void Awake()
     {
-        _gate.SetActive(false);
+        Gate(false);
+        StartCoroutine(SpanwEnemies());
         _camShake = GameObject.Find("Main Camera").GetComponent<CamShake>();
     }
     private void Start()
     {
-        _ECP.InitializeEnemyHealth(_enemyHealth, _damageDealtByenemy, _damageGivenByEnemy);
+    
     }
-    IEnumerator SpanwEnemies()
+    public IEnumerator SpanwEnemies()
     {
-        while (_spawningEnemies)
+        while (gameObject)
         {
-            Debug.Log("Spawn kar BC");
             yield return new WaitForSeconds(_timeBetweenSpawn);
             Instantiate(_enemyPrefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity);
         }
@@ -54,27 +47,27 @@ public class EnemySpawner : MonoBehaviour
 
     void DisplayHealth() => _healthBar.value = _health;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        _gate.SetActive(true);
-        _spawningEnemies = true;
-        StartCoroutine(SpanwEnemies());
-    }
+    
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Player_Bullet"))
         {
             _health -= _damageDealt;
-            Destroy(other.gameObject);
+            //Spawn a particle effect of to show bullet impact.
+            Destroy(other.gameObject); //bullet destroyed here
             if (_health <= 0)
             {
-                _spawningEnemies = false;
-                _gate.SetActive(false);
+                Gate(false);
                 Die();
             }
+        }   
+        if (other.gameObject.CompareTag("Bullet"))
+        {   
+            //Spawn a particle effect of to show bullet impact.
+            Destroy(other.gameObject);
         }
     }
-    bool temp = false;
+    private bool temp = false;
     public void Die()
     {
         GameManager.Instance.IsSpawnerDead = true;
@@ -87,4 +80,12 @@ public class EnemySpawner : MonoBehaviour
         }
         //play destroy sound here
     }
+    public void Gate(bool condition)
+    {
+        if (_gate)
+        {
+            _gate.SetActive(condition);
+        }
+    }
+
 }

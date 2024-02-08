@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class StandAndShootEnemy : MonoBehaviour
 {
+    
     Shoot _shoot;
     [SerializeField] private bool _shooting = false;
     [SerializeField] private float _rotationSpeed;
@@ -57,4 +57,9 @@ public class StandAndShootEnemy : MonoBehaviour
             _shooting = false;
         }
     }
+    private void Start()
+    {
+
+    }
+
 }

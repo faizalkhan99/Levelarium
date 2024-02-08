@@ -587,7 +587,6 @@ MonoBehaviour:
   _healthBar: {fileID: 521607281}
   _enemyHealth: 3
   _damageReceivedByEnemy: 1
-  _damageGivenByEnemy: 1
   knockBackDuration: 2
   knockBackForce: 50
 --- !u!195 &4999646168496087578

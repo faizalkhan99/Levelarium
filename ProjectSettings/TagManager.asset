@@ -10,10 +10,10 @@ TagManager:
   - Bullet
   - Wall
   - temp
-  - Level_1
   - locked_levels
   - Ramp
   - MovingPlatform
+  - Player_Bullet
   layers:
   - Default
   - TransparentFX
@@ -21,11 +21,11 @@ TagManager:
   - Ground
   - Water
   - UI
-  - PP
+  - 
   - Bullet
   - Enemies
   - Wall
-  - PP
+  - 
   - 
   - 
   - 
