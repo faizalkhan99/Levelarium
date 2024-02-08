@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +11,14 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private float teleportDelay = 2f;
     [SerializeField] private string teleportText = "Teleporting...";
-
+    GameObject player;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !IsTeleporting())
         {
+            player = other.gameObject;
+            Invoke("ExplicitlyTeleport", 0.75f);
             StartCoroutine(TeleportSequence(other.gameObject));
         }
     }
@@ -29,19 +31,21 @@ public class Teleporter : MonoBehaviour
     private IEnumerator TeleportSequence(GameObject player)
     {
         // Fade Out
-        yield return StartCoroutine(FadeOut());
+        yield return StartCoroutine(FadeOut(player));
 
         // Teleport after the fade out
-        player.transform.position = _teleportDestination.position;
-
+        //Debug.Log(transform.position + " " + _teleportDestination.position);
         // Display teleporting text
         yield return StartCoroutine(DisplayText(teleportText));
 
         // Fade In
         yield return StartCoroutine(FadeIn());
     }
-
-    private IEnumerator FadeOut()
+    void ExplicitlyTeleport()
+    {
+        player.transform.position = _teleportDestination.position;
+    }
+    private IEnumerator FadeOut(GameObject player)
     {
         float timer = 0f;
 
@@ -53,8 +57,8 @@ public class Teleporter : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-
         fadePanel.color = Color.black;
+        
     }
 
     private IEnumerator DisplayText(string startText)
