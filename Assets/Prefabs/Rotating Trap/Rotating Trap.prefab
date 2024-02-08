@@ -360,7 +360,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 214897702056215425}
-  - component: {fileID: 2647535667221567181}
   m_Layer: 0
   m_Name: Rotating Trap
   m_TagString: Untagged
@@ -384,21 +383,6 @@ Transform:
   - {fileID: 8652384088082636237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2647535667221567181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5198523439585222914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa0a720e55a7aa64d8f91e9e1736d0c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockBackDuration: 3
-  knockBackForce: 200
-  _damageGivenToPlayer: 2
 --- !u!1 &5696996759051002871
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,9 +394,9 @@ GameObject:
   - component: {fileID: 1874914533165335996}
   - component: {fileID: 4383626895968034777}
   - component: {fileID: 645188942614883115}
-  - component: {fileID: 6592620916303349354}
   - component: {fileID: 7354570810589104245}
-  - component: {fileID: 1611099288344454131}
+  - component: {fileID: 7023158596213023132}
+  - component: {fileID: 3444027297007885876}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -490,27 +474,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6592620916303349354
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5696996759051002871}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 395fa5ccd77ccd048b4def6a1c5dad43, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &7354570810589104245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -532,7 +495,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.998741, y: 0.3692614, z: 1.1642014}
   m_Center: {x: 0, y: -1.627961e-14, z: 0.3955758}
---- !u!114 &1611099288344454131
+--- !u!114 &7023158596213023132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696996759051002871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6434fbea9ffd7534297a2f4b81b65559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotatingSpeesd: 1
+--- !u!114 &3444027297007885876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
