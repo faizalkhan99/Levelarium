@@ -352,7 +352,7 @@ MonoBehaviour:
   joystick: {fileID: 0}
   vect: {x: 0, y: 0, z: 0}
   _speed: 16
-  _playerHealth: 10
+  _health: 5
   _dampingForce: 10
   _flickerInterval: 0.1
   _suicideHeight: 20
@@ -511,9 +511,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
