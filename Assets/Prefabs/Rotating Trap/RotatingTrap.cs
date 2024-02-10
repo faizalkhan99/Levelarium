@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class RotatingTrap : MonoBehaviour
 {
-    [SerializeField] private float _rotatingSpeesd;
+    [SerializeField] private float _xSpeed;
+    [SerializeField] private float _ySpeed;
+    [SerializeField] private float _zSpeed;
 
     void Update()
     {
-        transform.Rotate(0, 0, _rotatingSpeesd);
+        transform.Rotate(_xSpeed, _ySpeed, _zSpeed);
     }
 }
