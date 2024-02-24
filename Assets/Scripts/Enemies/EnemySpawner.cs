@@ -20,6 +20,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Slider _healthBar;
 
     [SerializeField] Transform[] _spawnPoints;
+    [SerializeField] Transform[] _gatesToDisappear;
+
 
     private void Awake()
     {
@@ -58,6 +60,7 @@ public class EnemySpawner : MonoBehaviour
             if (_health <= 0)
             {
                 Gate(false);
+                OpenGates();
                 Die();
             }
         }   
@@ -87,5 +90,13 @@ public class EnemySpawner : MonoBehaviour
             _gate.SetActive(condition);
         }
     }
-
+    private void OpenGates()
+    {
+        for (int i = 0; i < _gatesToDisappear.Length; i++)
+        {
+            //if gate exists, open it.
+            if(_gatesToDisappear[i])
+            _gatesToDisappear[i].gameObject.SetActive(false);
+        }
+    }
 }
