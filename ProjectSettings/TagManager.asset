@@ -14,6 +14,10 @@ TagManager:
   - Ramp
   - MovingPlatform
   - Player_Bullet
+  - redgate
+  - yellowgate
+  - cyangate
+  - bluegate
   layers:
   - Default
   - TransparentFX
