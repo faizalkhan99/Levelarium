@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Black
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: c85dc4b061ff5b5499472e65ed24f5c6, type: 2}
+  m_Parent: {fileID: -1580535799172915004, guid: 23a84b68e61fec548891a9e779f0c18b,
+    type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []

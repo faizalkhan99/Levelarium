@@ -3,9 +3,10 @@ using UnityEngine;
 public class LevelSelector : MonoBehaviour
 {
     GameObject[] _levels;
+    [SerializeField] private string _tagToLookFor;
     private void Awake()
     {
-        _levels = GameObject.FindGameObjectsWithTag("locked_levels");
+        _levels = GameObject.FindGameObjectsWithTag(_tagToLookFor);
 
     }
     void Start()

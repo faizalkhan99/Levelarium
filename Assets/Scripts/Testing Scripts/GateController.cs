@@ -29,10 +29,12 @@ public class GateController : MonoBehaviour
         // Open the gate only if all assigned pressure plates are activated
         if (activatedPressurePlates >= totalPressurePlates)
         {
+            Debug.Log("Khukja sim sim");
             OpenGate(false);
         }
         else
         {
+            Debug.Log("Band hoja sim sim");
             OpenGate(true);
         }
     }

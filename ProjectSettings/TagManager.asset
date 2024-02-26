@@ -18,6 +18,9 @@ TagManager:
   - yellowgate
   - cyangate
   - bluegate
+  - greengate
+  - w1_locked_levels
+  - w2_locked_levels
   layers:
   - Default
   - TransparentFX
