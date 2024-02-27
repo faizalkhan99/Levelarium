@@ -4083,6 +4083,7 @@ MonoBehaviour:
   fadeDuration: 0.5
   teleportDelay: 1
   teleportText: Teleporting...
+  joystick: {fileID: 1906478466}
 --- !u!1 &655802710
 GameObject:
   m_ObjectHideFlags: 0
@@ -6249,6 +6250,7 @@ MonoBehaviour:
   fadeDuration: 0.5
   teleportDelay: 1
   teleportText: Teleporting...
+  joystick: {fileID: 1906478466}
 --- !u!65 &834428175
 BoxCollider:
   m_ObjectHideFlags: 0

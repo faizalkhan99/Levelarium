@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
         PlayBGM();
     }
     [SerializeField] AudioSource _bgm;
+    [SerializeField] AudioSource _playSFX;
     public void PlayBGM()
     {
         _bgm.PlayDelayed(0.3f);
@@ -27,5 +28,10 @@ public class AudioManager : MonoBehaviour
     public void PauseBGM()
     {
         _bgm.Pause();
+    }
+    public void PLaySFX(AudioClip _clip)
+    {
+        _playSFX.clip = _clip;
+        _playSFX.Play();        
     }
 }
