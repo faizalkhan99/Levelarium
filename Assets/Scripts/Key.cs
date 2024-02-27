@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    [SerializeField] private AudioClip _clip;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && GameManager.Instance.IsSpawnerDead)
         {
             GameManager.Instance.HasKey = true;
             GameManager.Instance.InstantiateGate();
+            AudioManager.Instance.PLaySFX(_clip);
             Destroy(gameObject);
         }
     }

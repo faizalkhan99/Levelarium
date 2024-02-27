@@ -13,7 +13,9 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private string teleportText = "Teleporting...";
     GameObject player;
     [SerializeField] private Image joystick;
-    
+    [SerializeField] private AudioClip _teleporterSFX;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !IsTeleporting())
@@ -43,6 +45,7 @@ public class Teleporter : MonoBehaviour
     }
     void ExplicitlyTeleport()
     {
+        AudioManager.Instance.PLaySFX(_teleporterSFX);
         joystick.raycastTarget = true;
         player.transform.position = _teleportDestination.position;
     }
