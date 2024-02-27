@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class LevelSelector : MonoBehaviour
 {
-    GameObject[] _levels;
+    [SerializeField] GameObject[] _levels;
     [SerializeField] private string _tagToLookFor;
     private void Awake()
     {
-        _levels = GameObject.FindGameObjectsWithTag(_tagToLookFor);
+        //_levels = GameObject.FindGameObjectsWithTag(_tagToLookFor);
 
     }
     void Start()
@@ -15,6 +15,7 @@ public class LevelSelector : MonoBehaviour
         {
             if( i < PlayerPrefs.GetInt("levels", 0))
             {
+                Debug.Log(_levels[i].name);
                 _levels[i].SetActive(false);
             }
             else

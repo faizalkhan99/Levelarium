@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.4772606, g: 0.55402285, b: 0.7075472, a: 1}
+  m_AmbientSkyColor: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.16
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
+  m_IndirectSpecularColor: {r: 0.020370742, g: 0.021463575, b: 0.019372566, a: 0.16}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 70fd4e72f5e0a9249a4536f593c14530,
+    type: 2}
   m_LightingSettings: {fileID: 870466319}
 --- !u!196 &4
 NavMeshSettings:
@@ -487,6 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eabf4a5701dd7049a56efcd5afef2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levels: []
   _tagToLookFor: w2_locked_levels
 --- !u!1001 &42443062
 PrefabInstance:
@@ -524,7 +526,7 @@ PrefabInstance:
     - target: {fileID: 7189919067809230381, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.37
       objectReference: {fileID: 0}
     - target: {fileID: 7189919067809230381, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
         type: 3}
@@ -534,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 7189919067809230381, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 7189919067809230381, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
         type: 3}
@@ -10780,7 +10782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1445428242
 Light:
   m_ObjectHideFlags: 0
@@ -10792,8 +10794,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
-  m_Intensity: 5
+  m_Color: {r: 0.3773585, g: 0.35458687, b: 0.2830189, a: 1}
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -15718,6 +15720,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eabf4a5701dd7049a56efcd5afef2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levels:
+  - {fileID: 385814462}
+  - {fileID: 1966658715}
+  - {fileID: 379629932}
+  - {fileID: 685485109}
+  - {fileID: 1986981909}
   _tagToLookFor: w1_locked_levels
 --- !u!1 &1971577149
 GameObject:
