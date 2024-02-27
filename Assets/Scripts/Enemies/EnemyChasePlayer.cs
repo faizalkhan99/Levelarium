@@ -26,10 +26,6 @@ public class EnemyChasePlayer : MonoBehaviour
 
     private Vector3 lastFramePosition;
     private Vector3 knockBackDirection;
-    private void Start()
-    {
-
-    }
 
     void Update()
     {

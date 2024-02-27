@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class SeeAndFollow : MonoBehaviour
 {
     NavMeshAgent agent;
     GameObject _player;
     CamShake _camShakeHandle;
+    [SerializeField] private Slider _healthBar;
     [SerializeField] private int _health;
     [SerializeField] private int _damageGiven;
     [SerializeField] private int _damageRecieved;
@@ -26,7 +28,13 @@ public class SeeAndFollow : MonoBehaviour
         {
             agent.SetDestination(_player.transform.position);
         }
-
+        DisplayHealth();
+    }
+    void DisplayHealth()
+    {
+        _healthBar.value = _health;
+        _healthBar.gameObject.transform.rotation = Quaternion.identity;
+        
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -12,13 +12,14 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private float teleportDelay = 2f;
     [SerializeField] private string teleportText = "Teleporting...";
     GameObject player;
+    [SerializeField] private Image joystick;
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !IsTeleporting())
         {
             player = other.gameObject;
-            Invoke("ExplicitlyTeleport", 0.75f);
+            Invoke("ExplicitlyTeleport", 0.0f);
             StartCoroutine(TeleportSequence(other.gameObject));
         }
     }
@@ -34,7 +35,6 @@ public class Teleporter : MonoBehaviour
         yield return StartCoroutine(FadeOut(player));
 
         // Teleport after the fade out
-        //Debug.Log(transform.position + " " + _teleportDestination.position);
         // Display teleporting text
         yield return StartCoroutine(DisplayText(teleportText));
 
@@ -43,6 +43,7 @@ public class Teleporter : MonoBehaviour
     }
     void ExplicitlyTeleport()
     {
+        joystick.raycastTarget = true;
         player.transform.position = _teleportDestination.position;
     }
     private IEnumerator FadeOut(GameObject player)
@@ -105,7 +106,7 @@ public class Teleporter : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-
+        joystick.raycastTarget = false;
         displayText.color = Color.clear;
     }
 
