@@ -7859,7 +7859,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -27945,6 +27945,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771210324016275547, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883887604368299311, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4552430765605337359, guid: 1390c8aba1e59f246910411be1922305,
         type: 3}
       propertyPath: m_Name
@@ -27963,6 +27973,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 321628983248070247, guid: 4dc28aca94fd3924d801eb78dd8ca7cf,
+        type: 3}
+      propertyPath: _keySpawnedSFX
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 321628983248070247, guid: 4dc28aca94fd3924d801eb78dd8ca7cf,
+        type: 3}
+      propertyPath: _evilMachineDeadSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: fbda94452149f1845bfacc77ee947238, type: 3}
     - target: {fileID: 321628983248070247, guid: 4dc28aca94fd3924d801eb78dd8ca7cf,
         type: 3}
       propertyPath: _gatesToDisappear.Array.size

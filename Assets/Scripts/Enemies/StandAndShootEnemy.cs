@@ -57,9 +57,4 @@ public class StandAndShootEnemy : MonoBehaviour
             _shooting = false;
         }
     }
-    private void Start()
-    {
-
-    }
-
 }

@@ -11,7 +11,7 @@ public class Key : MonoBehaviour
         {
             GameManager.Instance.HasKey = true;
             GameManager.Instance.InstantiateGate();
-            AudioManager.Instance.PLaySFX(_clip);
+            AudioManager.Instance.KeyObtainedSFX(_clip);
             Destroy(gameObject);
         }
     }

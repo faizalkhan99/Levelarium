@@ -20,7 +20,11 @@ public class AudioManager : MonoBehaviour
         PlayBGM();
     }
     [SerializeField] AudioSource _bgm;
-    [SerializeField] AudioSource _playSFX;
+    [SerializeField] AudioSource _fireBulletSFX;
+    [SerializeField] AudioSource _keySpawnedSFX;
+    [SerializeField] AudioSource _keyObtainedSFX;
+    [SerializeField] AudioSource _evilMachineDeadSFX;
+    [SerializeField] AudioSource _levelCompletedSFX;
     public void PlayBGM()
     {
         _bgm.PlayDelayed(0.3f);
@@ -29,9 +33,43 @@ public class AudioManager : MonoBehaviour
     {
         _bgm.Pause();
     }
-    public void PLaySFX(AudioClip _clip)
+    public void FireBulletSFX(AudioClip _clip)
     {
-        _playSFX.clip = _clip;
-        _playSFX.Play();        
+        if (_clip)
+        {
+            _fireBulletSFX.clip = _clip;
+            _fireBulletSFX.Play();
+        }
+    }
+    public void KeySpawnedSFX(AudioClip _clip)
+    {
+        if (_clip)
+        {
+            _keySpawnedSFX.clip = _clip;
+            _keySpawnedSFX.Play();
+        }
+    }public void KeyObtainedSFX(AudioClip _clip)
+    {
+        if (_clip)
+        {
+            _keyObtainedSFX.clip = _clip;
+            _keyObtainedSFX.Play();
+        }
+    }
+    public void LevelCompletedSFX(AudioClip _clip)
+    {
+        if (_clip)
+        {
+            _levelCompletedSFX.clip = _clip;
+            _levelCompletedSFX.Play();
+        }
+    }
+    public void EvilMachineDeadSFX(AudioClip _clip)
+    {
+        if (_clip)
+        {
+            _evilMachineDeadSFX.clip = _clip;
+            _evilMachineDeadSFX.Play();
+        }
     }
 }

@@ -22,6 +22,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] Transform[] _gatesToDisappear;
 
+    [SerializeField] private AudioClip _evilMachineDeadSFX;
+    [SerializeField] private AudioClip _keySpawnedSFX;
 
     private void Awake()
     {
@@ -79,9 +81,10 @@ public class EnemySpawner : MonoBehaviour
             GameManager.Instance.InstantiateKey();
             temp = true;
             _camShake.EnableShake();
+            AudioManager.Instance.EvilMachineDeadSFX(_evilMachineDeadSFX);
+            AudioManager.Instance.KeySpawnedSFX(_keySpawnedSFX);
             Destroy(gameObject);
         }
-        //play destroy sound here
     }
     public void Gate(bool condition)
     {

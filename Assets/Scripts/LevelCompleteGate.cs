@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelCompleteGate : MonoBehaviour
 {
+    [SerializeField] private AudioClip _levelCompletedClip;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") && GameManager.Instance.HasKey && GameManager.Instance.IsSpawnerDead)
@@ -14,6 +15,7 @@ public class LevelCompleteGate : MonoBehaviour
             {
                 PlayerPrefs.SetInt("levels", SceneManager.GetActiveScene().buildIndex);
             }
+            AudioManager.Instance.LevelCompletedSFX(_levelCompletedClip);
             UIManager.Instance.NextLevelPanel();
         }
     }

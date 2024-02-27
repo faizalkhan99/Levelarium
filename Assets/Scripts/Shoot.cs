@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour
         foreach (Transform shootPos in _shootPos)
         {
             GameObject bullet = Instantiate(_bulletPrefab, shootPos.position, Quaternion.identity);
-            AudioManager.Instance.PLaySFX(_shootSFX);
+            AudioManager.Instance.FireBulletSFX(_shootSFX);
             if (bullet.TryGetComponent<Rigidbody>(out var rb))
             {
                 rb.AddForce(_bulletForce * (shootPos.forward), ForceMode.Impulse);

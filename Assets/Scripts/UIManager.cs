@@ -72,6 +72,7 @@ public class UIManager : MonoBehaviour
     }
     public void NextLevelPanel()
     {
+        AudioManager.Instance.PauseBGM();
         Time.timeScale = 0f;
         _nextLevelPanel.SetActive(true);
     }
@@ -101,7 +102,7 @@ public class UIManager : MonoBehaviour
 
     public void FellIntoVoid()
     {
-        //Time.timeScale = 0f;
+        AudioManager.Instance.PauseBGM();
         if (_fellIntoVoidPanel != null) _fellIntoVoidPanel.SetActive(true);
     }
 
