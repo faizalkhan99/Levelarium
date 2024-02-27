@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     }
     [SerializeField] AudioSource _bgm;
     [SerializeField] AudioSource _fireBulletSFX;
+    [SerializeField] AudioSource _collideBulletSFX;
     [SerializeField] AudioSource _keySpawnedSFX;
     [SerializeField] AudioSource _keyObtainedSFX;
     [SerializeField] AudioSource _evilMachineDeadSFX;
@@ -39,6 +40,14 @@ public class AudioManager : MonoBehaviour
         {
             _fireBulletSFX.clip = _clip;
             _fireBulletSFX.Play();
+        }
+    }
+    public void CollideBulletSFX(AudioClip _clip)
+    {
+        if (_clip)
+        {
+            _collideBulletSFX.clip = _clip;
+            _collideBulletSFX.Play();
         }
     }
     public void KeySpawnedSFX(AudioClip _clip)

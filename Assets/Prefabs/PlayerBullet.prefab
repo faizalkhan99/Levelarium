@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageGivenToPlayer: 0
+  _collisionSFX: {fileID: 8300000, guid: 4f658ce1ebc8a404e99930ab2cab4ee3, type: 3}
 --- !u!54 &452203292995863963
 Rigidbody:
   m_ObjectHideFlags: 0
