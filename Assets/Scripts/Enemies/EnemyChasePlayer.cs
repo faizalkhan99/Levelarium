@@ -46,6 +46,7 @@ public class EnemyChasePlayer : MonoBehaviour
         {
             _player.Damage(_enemyHealth, knockBackDirection, knockBackForce, knockBackDuration);
             _camShakeHandle.EnableShake();
+            //sfx here
             Destroy(gameObject);
         }
 

@@ -759,6 +759,9 @@ MonoBehaviour:
   - {fileID: 2029009551598824525}
   - {fileID: 2959616012491519038}
   - {fileID: 2642778357046064326}
+  _gatesToDisappear: []
+  _evilMachineDeadSFX: {fileID: 8300000, guid: fbda94452149f1845bfacc77ee947238, type: 3}
+  _keySpawnedSFX: {fileID: 0}
 --- !u!208 &6456514979570603566
 NavMeshObstacle:
   m_ObjectHideFlags: 0

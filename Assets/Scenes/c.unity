@@ -7694,6 +7694,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771210324016275547, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 150326c4804f9c547a200f7dcce660cb, type: 3}
     - target: {fileID: 4552430765605337359, guid: 1390c8aba1e59f246910411be1922305,
         type: 3}
       propertyPath: m_Name
@@ -9645,6 +9650,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7255212644383483099, guid: 0f7523c28bb160b4f9868064b566bc65,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: c
+      objectReference: {fileID: 0}
     - target: {fileID: 7255212644396250651, guid: 0f7523c28bb160b4f9868064b566bc65,
         type: 3}
       propertyPath: m_IsActive
@@ -9721,6 +9731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255212644920725702, guid: 0f7523c28bb160b4f9868064b566bc65,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: c
       objectReference: {fileID: 0}
     - target: {fileID: 7255212644923549153, guid: 0f7523c28bb160b4f9868064b566bc65,
         type: 3}

@@ -44,7 +44,6 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1.0f;
         _loadingScreen.SetActive(true);
         StartCoroutine(LoadingAsync(sceneName));
-        Debug.Log(Time.timeScale);
     }
     IEnumerator LoadingAsync(string sceneName)
     {
@@ -72,13 +71,14 @@ public class UIManager : MonoBehaviour
     }
     public void NextLevelPanel()
     {
-        AudioManager.Instance.PauseBGM();
         Time.timeScale = 0f;
+        AudioManager.Instance.PauseBGM();
         _nextLevelPanel.SetActive(true);
     }
     public void LevelFailedPanel(bool condition)
     {
         Time.timeScale = 0f;
+        AudioManager.Instance.PauseBGM();
         _levelfailedPanel.SetActive(condition);
     }
 
@@ -87,15 +87,16 @@ public class UIManager : MonoBehaviour
         if (condition)
         {
             Time.timeScale = 0f;
+            AudioManager.Instance.PauseBGM();
             _pauseButton.SetActive(!condition);
             _pauseMenuPanel.SetActive(condition);
-            AudioManager.Instance.PauseBGM();
         }
         else
         {
             Time.timeScale = 1f;
             _pauseButton.SetActive(!condition);
             _pauseMenuPanel.SetActive(condition);
+            Debug.Log("UIManager:PauseUnpauseGame():else condition");
             AudioManager.Instance.PlayBGM();
         }
     }

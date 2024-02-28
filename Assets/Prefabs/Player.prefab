@@ -359,7 +359,7 @@ MonoBehaviour:
   _rotationSpeed: 10
   _playerHealthbar: {fileID: 5916462599870771393}
   canTakeDamage: 1
-  damageCooldown: 1
+  damageCooldown: 0.5
   force: {x: 0, y: 0, z: 0}
   _rigidbody: {fileID: 3122831056287075768}
   _isStandingOnMovingPlatform: 0
@@ -379,7 +379,8 @@ MonoBehaviour:
     type: 3}
   _shootPos:
   - {fileID: 4422841513405182287}
-  _bulletForce: 10
+  _bulletForce: 20
+  _shootSFX: {fileID: 8300000, guid: af7253a43eb84724a85b522f890306f7, type: 3}
 --- !u!54 &3122831056287075768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -578,7 +579,7 @@ Transform:
   m_GameObject: {fileID: 8857339317148001414}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000014047993, y: -0.59564584, z: 1.6069031}
+  m_LocalPosition: {x: 0.00000014047993, y: -0.59564584, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

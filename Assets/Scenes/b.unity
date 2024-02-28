@@ -2160,6 +2160,7 @@ GameObject:
   - component: {fileID: 162607593}
   - component: {fileID: 162607592}
   - component: {fileID: 162607591}
+  - component: {fileID: 162607594}
   m_Layer: 8
   m_Name: Gate_2
   m_TagString: Untagged
@@ -2253,6 +2254,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162607589}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &162607594
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162607589}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &164956397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10382,6 +10399,7 @@ GameObject:
   - component: {fileID: 938339455}
   - component: {fileID: 938339454}
   - component: {fileID: 938339453}
+  - component: {fileID: 938339458}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -10502,6 +10520,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &938339458
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938339452}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &948461898
 GameObject:
   m_ObjectHideFlags: 0
@@ -14731,35 +14765,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 279710497}
-    - target: {fileID: 7255212643814172463, guid: 0f7523c28bb160b4f9868064b566bc65,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FireBullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255212644383483099, guid: 0f7523c28bb160b4f9868064b566bc65,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: b
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255212644920725702, guid: 0f7523c28bb160b4f9868064b566bc65,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: b
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255212644923549153, guid: 0f7523c28bb160b4f9868064b566bc65,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: b
-      objectReference: {fileID: 0}
     - target: {fileID: 7255212645054507443, guid: 0f7523c28bb160b4f9868064b566bc65,
         type: 3}
       propertyPath: m_Name
       value: UI MANAGER
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255212645054507443, guid: 0f7523c28bb160b4f9868064b566bc65,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7255212645054507455, guid: 0f7523c28bb160b4f9868064b566bc65,
         type: 3}
@@ -15822,6 +15831,7 @@ GameObject:
   - component: {fileID: 1255269916}
   - component: {fileID: 1255269915}
   - component: {fileID: 1255269914}
+  - component: {fileID: 1255269919}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -15942,6 +15952,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1255269919
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255269913}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1255592627
 GameObject:
   m_ObjectHideFlags: 0
@@ -15954,6 +15980,7 @@ GameObject:
   - component: {fileID: 1255592631}
   - component: {fileID: 1255592630}
   - component: {fileID: 1255592629}
+  - component: {fileID: 1255592632}
   m_Layer: 8
   m_Name: Gate_5
   m_TagString: Untagged
@@ -16047,6 +16074,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255592627}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1255592632
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255592627}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!43 &1267469367
 Mesh:
   m_ObjectHideFlags: 0
@@ -16237,7 +16280,7 @@ GameObject:
   - component: {fileID: 1295705512}
   - component: {fileID: 1295705516}
   m_Layer: 0
-  m_Name: win gate
+  m_Name: win gate frame
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -16916,6 +16959,7 @@ GameObject:
   - component: {fileID: 1313974115}
   - component: {fileID: 1313974114}
   - component: {fileID: 1313974113}
+  - component: {fileID: 1313974116}
   m_Layer: 8
   m_Name: Gate_4
   m_TagString: Untagged
@@ -17009,6 +17053,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313974111}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1313974116
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313974111}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1322362216
 GameObject:
   m_ObjectHideFlags: 0
@@ -20750,7 +20810,7 @@ GameObject:
   - component: {fileID: 1603779755}
   - component: {fileID: 1603779754}
   m_Layer: 0
-  m_Name: win gate
+  m_Name: win gate frame
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -22800,6 +22860,7 @@ GameObject:
   - component: {fileID: 1837639161}
   - component: {fileID: 1837639160}
   - component: {fileID: 1837639159}
+  - component: {fileID: 1837639164}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -22920,6 +22981,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1837639164
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837639158}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1851571959
 GameObject:
   m_ObjectHideFlags: 0
@@ -23868,7 +23945,7 @@ GameObject:
   - component: {fileID: 1900569387}
   - component: {fileID: 1900569386}
   m_Layer: 0
-  m_Name: win gate
+  m_Name: win gate frame
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -24229,6 +24306,7 @@ GameObject:
   - component: {fileID: 1915108075}
   - component: {fileID: 1915108074}
   - component: {fileID: 1915108073}
+  - component: {fileID: 1915108076}
   m_Layer: 8
   m_Name: Gate_3
   m_TagString: Untagged
@@ -24322,6 +24400,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915108071}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1915108076
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915108071}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1916688225
 GameObject:
   m_ObjectHideFlags: 0
@@ -27915,6 +28009,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771210324016275547, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1cd7434ccbc0051429d4018f2c2ebbe9, type: 3}
     - target: {fileID: 4552430765605337359, guid: 1390c8aba1e59f246910411be1922305,
         type: 3}
       propertyPath: m_Name
@@ -27933,6 +28032,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 321628983248070247, guid: 4dc28aca94fd3924d801eb78dd8ca7cf,
+        type: 3}
+      propertyPath: _areanaGate
+      value: 
+      objectReference: {fileID: 287106197}
     - target: {fileID: 321628983248070247, guid: 4dc28aca94fd3924d801eb78dd8ca7cf,
         type: 3}
       propertyPath: _keySpawnedSFX
@@ -27973,6 +28077,11 @@ PrefabInstance:
       propertyPath: _gatesToDisappear.Array.data[4]
       value: 
       objectReference: {fileID: 1255592628}
+    - target: {fileID: 1470336275178918663, guid: 4dc28aca94fd3924d801eb78dd8ca7cf,
+        type: 3}
+      propertyPath: m_Name
+      value: Gate To Close
+      objectReference: {fileID: 0}
     - target: {fileID: 1608936473644787604, guid: 4dc28aca94fd3924d801eb78dd8ca7cf,
         type: 3}
       propertyPath: m_AnchorMax.x

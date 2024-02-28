@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private GameObject _keyPrefab;
     [SerializeField] GameObject _enemyPrefab;
-    [SerializeField] private GameObject _gate;
+    [SerializeField] private GameObject _areanaGate;
 
     [SerializeField] private int _damageDealt;
 
@@ -88,9 +88,9 @@ public class EnemySpawner : MonoBehaviour
     }
     public void Gate(bool condition)
     {
-        if (_gate)
+        if (_areanaGate)
         {
-            _gate.SetActive(condition);
+            _areanaGate.SetActive(condition);
         }
     }
     private void OpenGates()

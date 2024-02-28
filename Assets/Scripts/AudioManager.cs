@@ -26,9 +26,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource _keyObtainedSFX;
     [SerializeField] AudioSource _evilMachineDeadSFX;
     [SerializeField] AudioSource _levelCompletedSFX;
+    [SerializeField] AudioSource _enemyDeathSFX;
     public void PlayBGM()
     {
+        Debug.Log("AudioManager:PlayBGM();");
         _bgm.PlayDelayed(0.3f);
+        Debug.Log(_bgm.volume);
     }
     public void PauseBGM()
     {
@@ -80,5 +83,10 @@ public class AudioManager : MonoBehaviour
             _evilMachineDeadSFX.clip = _clip;
             _evilMachineDeadSFX.Play();
         }
+    }
+    public void EnemyDeathSFX()
+    {
+        if(_enemyDeathSFX.clip)
+            _enemyDeathSFX.Play();   
     }
 }
