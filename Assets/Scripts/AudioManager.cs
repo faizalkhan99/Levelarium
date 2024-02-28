@@ -13,7 +13,15 @@ public class AudioManager : MonoBehaviour
     }
     private void Awake()
     {
-        _instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Debug.Log("There were multiple instances of AudioManager");
+            Destroy(gameObject);
+        }
     }
     private void Start()
     {

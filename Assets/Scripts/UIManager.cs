@@ -71,25 +71,25 @@ public class UIManager : MonoBehaviour
     }
     public void NextLevelPanel()
     {
-        Time.timeScale = 0f;
         AudioManager.Instance.PauseBGM();
         _nextLevelPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void LevelFailedPanel(bool condition)
     {
-        Time.timeScale = 0f;
         AudioManager.Instance.PauseBGM();
         _levelfailedPanel.SetActive(condition);
+        Time.timeScale = 0f;
     }
 
     public void PauseUnpauseGame(bool condition)
     {
         if (condition)
         {
-            Time.timeScale = 0f;
             AudioManager.Instance.PauseBGM();
             _pauseButton.SetActive(!condition);
             _pauseMenuPanel.SetActive(condition);
+            Time.timeScale = 0f;
         }
         else
         {
