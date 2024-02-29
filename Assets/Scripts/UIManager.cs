@@ -96,7 +96,6 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1f;
             _pauseButton.SetActive(!condition);
             _pauseMenuPanel.SetActive(condition);
-            Debug.Log("UIManager:PauseUnpauseGame():else condition");
             AudioManager.Instance.PlayBGM();
         }
     }

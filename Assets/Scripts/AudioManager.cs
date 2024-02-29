@@ -17,11 +17,6 @@ public class AudioManager : MonoBehaviour
         {
             _instance = this;
         }
-        else
-        {
-            Debug.Log("There were multiple instances of AudioManager");
-            Destroy(gameObject);
-        }
     }
     private void Start()
     {
@@ -37,9 +32,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource _enemyDeathSFX;
     public void PlayBGM()
     {
-        Debug.Log("AudioManager:PlayBGM();");
         _bgm.PlayDelayed(0.3f);
-        Debug.Log(_bgm.volume);
     }
     public void PauseBGM()
     {
