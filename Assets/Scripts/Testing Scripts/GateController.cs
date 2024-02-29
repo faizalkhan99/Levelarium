@@ -23,13 +23,23 @@ public class GateController : MonoBehaviour
         activatedPressurePlates--;
         UpdateGateState();
     }
-
+    private int _counter = 0;
+    [SerializeField] GameObject[] _enemyToSpawn;
+    [SerializeField] Transform[] _position;
     private void UpdateGateState()
     {
         // Open the gate only if all assigned pressure plates are activated
         if (activatedPressurePlates >= totalPressurePlates)
         {
             OpenGate(false);
+            if(_counter == 0)
+            {
+                _counter = 1;
+                for (int i = 0; i < _enemyToSpawn.Length && _enemyToSpawn[i]; i++)
+                {
+                    Instantiate(_enemyToSpawn[i], _position[i].position, Quaternion.identity);
+                }
+            }
         }
         else
         {

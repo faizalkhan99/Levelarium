@@ -3898,6 +3898,11 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1915708449}
+    - target: {fileID: 7005400680786556090, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
+        type: 3}
+      propertyPath: damageCooldown
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 7189919067809230381, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
         type: 3}
       propertyPath: m_LocalPosition.x

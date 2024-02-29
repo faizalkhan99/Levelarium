@@ -9552,7 +9552,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: c250d0dfb39150049b26c8365b5610e1, type: 3}
     - target: {fileID: 4552430765605337359, guid: 1390c8aba1e59f246910411be1922305,
         type: 3}
       propertyPath: m_Name
@@ -11175,6 +11175,11 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1659889446}
+    - target: {fileID: 7005400680786556090, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
+        type: 3}
+      propertyPath: damageCooldown
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 7189919067809230381, guid: 7ec88b5c560a9ab47b3c04c56208ce08,
         type: 3}
       propertyPath: m_LocalPosition.x

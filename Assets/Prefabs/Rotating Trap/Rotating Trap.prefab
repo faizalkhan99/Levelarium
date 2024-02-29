@@ -507,7 +507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6434fbea9ffd7534297a2f4b81b65559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotatingSpeesd: 1
+  _xSpeed: 0
+  _ySpeed: 0
+  _zSpeed: 70
 --- !u!114 &3444027297007885876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBackDuration: 3
   knockBackForce: 200
-  _damageGivenToPlayer: 2
+  _damageGivenToPlayer: 1
 --- !u!1 &6802591382021268040
 GameObject:
   m_ObjectHideFlags: 0

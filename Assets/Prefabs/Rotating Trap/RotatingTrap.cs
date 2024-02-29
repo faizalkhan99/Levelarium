@@ -10,6 +10,6 @@ public class RotatingTrap : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(_xSpeed, _ySpeed, _zSpeed);
+        transform.Rotate(_xSpeed * Time.deltaTime, _ySpeed * Time.deltaTime, _zSpeed * Time.deltaTime);
     }
 }
