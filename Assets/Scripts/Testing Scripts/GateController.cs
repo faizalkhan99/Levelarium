@@ -1,4 +1,3 @@
-using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class GateController : MonoBehaviour
@@ -58,7 +57,6 @@ public class GateController : MonoBehaviour
         {
             if (condition)
             {
-                 //not here.
                 gate.SetActive(condition);
             }
             else
