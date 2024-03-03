@@ -81,8 +81,8 @@ public class EnemySpawner : MonoBehaviour
             GameManager.Instance.InstantiateKey();
             temp = true;
             _camShake.EnableShake();
-            AudioManager.Instance.EvilMachineDeadSFX(_evilMachineDeadSFX);
-            AudioManager.Instance.KeySpawnedSFX(_keySpawnedSFX);
+            AudioManager.Instance.PlaySFX(_evilMachineDeadSFX);
+            AudioManager.Instance.PlaySFX(_keySpawnedSFX);
             Destroy(gameObject);
         }
     }

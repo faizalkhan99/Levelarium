@@ -15,7 +15,7 @@ public class LevelCompleteGate : MonoBehaviour
             {
                 PlayerPrefs.SetInt("levels", SceneManager.GetActiveScene().buildIndex);
             }
-            AudioManager.Instance.LevelCompletedSFX(_levelCompletedClip);
+            AudioManager.Instance.PlaySFX(_levelCompletedClip);
             UIManager.Instance.NextLevelPanel();
         }
     }

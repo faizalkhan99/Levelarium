@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
                 _player.ApplyKnockback(rb.velocity.normalized, 15.0f, 4.0f);
             }
         }
-        AudioManager.Instance.CollideBulletSFX(_collisionSFX);
+        AudioManager.Instance.PlaySFX(_collisionSFX);
         Destroy(gameObject);
     }
 }

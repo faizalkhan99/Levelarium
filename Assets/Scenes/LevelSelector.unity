@@ -2264,10 +2264,119 @@ PrefabInstance:
     - target: {fileID: 4552430765605337359, guid: 1390c8aba1e59f246910411be1922305,
         type: 3}
       propertyPath: m_Name
-      value: AudioManager_1
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[10]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[13]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[14]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[15]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[16]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[17]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[18]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[19]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301290275799235502, guid: 1390c8aba1e59f246910411be1922305,
+        type: 3}
+      propertyPath: _SFXAudioSources.Array.data[20]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5327978491792828964, guid: 1390c8aba1e59f246910411be1922305, type: 3}
+    - {fileID: 6660755445416377380, guid: 1390c8aba1e59f246910411be1922305, type: 3}
+    - {fileID: 2074092827897239147, guid: 1390c8aba1e59f246910411be1922305, type: 3}
+    - {fileID: 6622393425573540479, guid: 1390c8aba1e59f246910411be1922305, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1390c8aba1e59f246910411be1922305, type: 3}

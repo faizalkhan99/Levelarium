@@ -45,7 +45,7 @@ public class Teleporter : MonoBehaviour
     }
     void ExplicitlyTeleport()
     {
-        AudioManager.Instance.FireBulletSFX(_teleporterSFX);
+        AudioManager.Instance.PlaySFX(_teleporterSFX);
         joystick.raycastTarget = true;
         player.transform.position = _teleportDestination.position;
     }

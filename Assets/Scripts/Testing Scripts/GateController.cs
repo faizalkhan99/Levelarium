@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class GateController : MonoBehaviour
@@ -6,10 +7,13 @@ public class GateController : MonoBehaviour
     [SerializeField] private int activatedPressurePlates = 0;
     [SerializeField] private int totalPressurePlates;
 
+    [SerializeField] private AudioClip _gateOpenSFX;
+    [SerializeField] private AudioClip _gateCloseSFX;
+
     private void Start()
     {
         totalPressurePlates = transform.childCount;
-        OpenGate(true); // Start with the gate closed
+        OpenGate(true); 
     }
 
     public void OnPressurePlateActivated()
@@ -43,15 +47,25 @@ public class GateController : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.PlaySFX(_gateCloseSFX);
             OpenGate(true);
         }
     }
 
-    private void OpenGate(bool open)
+    private void OpenGate(bool condition)
     {
         if (gate)
         {
-            gate.SetActive(open);
+            if (condition)
+            {
+                 //not here.
+                gate.SetActive(condition);
+            }
+            else
+            {
+                AudioManager.Instance.PlaySFX(_gateOpenSFX);
+                gate.SetActive(condition);
+            }
         }
     }
 }
