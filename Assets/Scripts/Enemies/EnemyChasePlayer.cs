@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class EnemyChasePlayer : MonoBehaviour
 {
     PlayerMovement _player;
-    CamShake _camShakeHandle;
     private NavMeshAgent _agent;
+    CamShake _camShakeHandle;
 
     [SerializeField] private Slider _healthBar;
 

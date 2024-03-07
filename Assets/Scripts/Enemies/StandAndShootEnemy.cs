@@ -5,10 +5,10 @@ public class StandAndShootEnemy : MonoBehaviour
 {
     
     Shoot _shoot;
+    private Rigidbody rb;
+    private Coroutine _shootCoroutine;
     [SerializeField] private bool _shooting = false;
     [SerializeField] private float _rotationSpeed;
-    private Coroutine _shootCoroutine;
-    private Rigidbody rb;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();

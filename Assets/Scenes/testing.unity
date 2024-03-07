@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34fa869f9edc8a428f0fa42617c7f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gate: {fileID: 891043888}
+  gateTag: 
 --- !u!1 &1707636397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,6 +2809,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2353581896294064060, guid: f93140d6e58294d4fafd778c514a4ebe,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1390382285}
     - target: {fileID: 3582120463465270522, guid: f93140d6e58294d4fafd778c514a4ebe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2859,10 +2864,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7581712701395481308, guid: f93140d6e58294d4fafd778c514a4ebe,
+    - target: {fileID: 3940988219739476184, guid: f93140d6e58294d4fafd778c514a4ebe,
         type: 3}
-      propertyPath: m_Constraints
-      value: 80
+      propertyPath: m_LocalPosition.z
+      value: 1.926
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896214726500068494, guid: f93140d6e58294d4fafd778c514a4ebe,
+        type: 3}
+      propertyPath: _shootSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: af7253a43eb84724a85b522f890306f7, type: 3}
+    - target: {fileID: 5896214726500068494, guid: f93140d6e58294d4fafd778c514a4ebe,
+        type: 3}
+      propertyPath: _bulletForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8646316379218116096, guid: f93140d6e58294d4fafd778c514a4ebe,
         type: 3}

@@ -16,8 +16,6 @@ public class Bullet : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent<PlayerMovement>(out var _player))
             {
-                Debug.Log("Bullet:OnTriggerenter");
-
                 _player.Damage(damageGivenToPlayer, Vector3.forward, 150f, 2.0f);
                 _player.ApplyKnockback(rb.velocity.normalized, 15.0f, 4.0f);
             }
