@@ -36,13 +36,14 @@ public class AudioManager : MonoBehaviour
         _bgm.Pause();
     }
     
-    public void PlaySFX(AudioClip audio)
+    public void PlaySFX(AudioClip audio/*, float vol*/)
     {
         for (int i = 0; i < _SFXAudioSources.Length; i++)
         {
             if (!_SFXAudioSources[i].isPlaying)
             {
                 _SFXAudioSources[i].clip = audio;
+                //_SFXAudioSources[i].volume = vol;
                 _SFXAudioSources[i].Play();
                 break;
             }

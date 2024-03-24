@@ -12,6 +12,8 @@ public class EnemyChasePlayer : MonoBehaviour
 
     [SerializeField] private int _enemyHealth;
     [SerializeField] private int _damageReceivedByEnemy;
+    [SerializeField] private int _damageGivenToPlayer;
+
 
     [SerializeField] private float knockBackDuration;
     [SerializeField] private float knockBackForce;
@@ -44,7 +46,7 @@ public class EnemyChasePlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _player.Damage(_enemyHealth, knockBackDirection, knockBackForce, knockBackDuration);
+            _player.Damage(_damageGivenToPlayer, knockBackDirection, knockBackForce, knockBackDuration);
             _camShakeHandle.EnableShake();
             //sfx here
             Destroy(gameObject);

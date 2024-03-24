@@ -97,7 +97,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (gameObject.activeSelf)
         {
+            Debug.Log("Before: " + _rigidbody.velocity);
             _rigidbody.AddForce(knockBackDirection * knockBackForce, ForceMode.Impulse);
+            Debug.Log("After: " + _rigidbody.velocity);
             StartCoroutine(ApplyKnockbackDuration(knockBackDuration));
         }
     }

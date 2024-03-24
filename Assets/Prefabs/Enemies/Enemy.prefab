@@ -83,9 +83,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3
-  m_WholeNumbers: 0
-  m_Value: 3
+  m_MaxValue: 2
+  m_WholeNumbers: 1
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -585,8 +585,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 521607281}
-  _enemyHealth: 3
+  _enemyHealth: 2
   _damageReceivedByEnemy: 1
+  _damageGivenToPlayer: 1
   knockBackDuration: 2
   knockBackForce: 50
 --- !u!195 &4999646168496087578
