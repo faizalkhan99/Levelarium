@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,19 +20,59 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float damageCooldown = 1f;
     [SerializeField] Vector3 force;
 
+    AudioSource _movesfx;
+
     [SerializeField] Rigidbody _rigidbody;
     private Renderer _renderer;
+
+    private void Start()
+    {
+        _movesfx.volume = 0;
+        _movesfx.pitch = 0.5f;
+    }
     private void Awake()
     {
+        if (!TryGetComponent<AudioSource>(out _movesfx)) Debug.Log("Player:AudioSource:NULL");
         if (!TryGetComponent(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
         if (!TryGetComponent(out _renderer)) Debug.Log("Player:Renderer:NULL");
     }
-    private void Update()
+    /*private void Update()
     {
         DisplayHealth();
         _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
         CheckFall();
-    }
+    }*/
+
+    public float acceleration = 10f; // Adjust as needed
+    public float deceleration = 10f; // Adjust as needed
+    //public float maxSpeed = 5f; // Adjust as needed
+
+    private Vector3 currentVelocity = Vector3.zero;
+
+    /*void Update()
+    {
+        DisplayHealth();
+        _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
+        CheckFall();
+        float horizontalInput = joystick.Horizontal;
+        float verticalInput = joystick.Vertical;
+
+        // Calculate target velocity based on input
+        Vector3 targetVelocity = new Vector3(horizontalInput, 0, verticalInput) * maxSpeed;
+
+        // Smoothly interpolate between current velocity and target velocity
+        if (targetVelocity.magnitude < currentVelocity.magnitude) // If decelerating
+        {
+            currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, Time.deltaTime * deceleration);
+        }
+        else // If accelerating
+        {
+            currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, Time.deltaTime * acceleration);
+        }
+
+        // Apply the velocity to the Rigidbody
+        _rigidbody.velocity = currentVelocity;
+    }*/
 
     void FixedUpdate()
     {
@@ -56,7 +97,27 @@ public class PlayerMovement : MonoBehaviour
                 GetComponent<Collider>().material.dynamicFriction = 1.0f;
             }
         }
-        _rigidbody.velocity = force;
+
+
+        if (force.magnitude < currentVelocity.magnitude) // If decelerating
+        {
+            currentVelocity = Vector3.Lerp(currentVelocity, force, Time.deltaTime * deceleration);
+        }
+        else // If accelerating
+        {
+            currentVelocity = Vector3.Lerp(currentVelocity, force, Time.deltaTime * acceleration);
+        }
+
+        // Apply the velocity to the Rigidbody
+        _rigidbody.velocity = currentVelocity;
+
+
+        //_rigidbody.velocity = force;
+
+            _movesfx.pitch = Mathf.Lerp(_movesfx.pitch, (direction!=Vector3.zero)?1:0.5f, deceleration * Time.deltaTime);
+            _movesfx.volume = Mathf.Lerp(_movesfx.volume, (direction!=Vector3.zero)?1:0, deceleration * Time.deltaTime);
+        
+        
 
         float moveAngle = Mathf.Atan2(rotatedDirection.x, rotatedDirection.z) * Mathf.Rad2Deg; // Calculate the rotation angle for the offset direction.
         if (rotatedDirection != Vector3.zero)

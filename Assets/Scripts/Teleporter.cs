@@ -18,12 +18,21 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !IsTeleporting())
+        if ( (other.CompareTag("Player") || other.CompareTag("teleportable") ) && !IsTeleporting())
         {
             player = other.gameObject;
             Invoke("ExplicitlyTeleport", 0.0f);
-            StartCoroutine(TeleportSequence(other.gameObject));
+            if(displayText)
+            {
+                StartCoroutine(TeleportSequence(other.gameObject));
+            }
         }
+    }
+    void ExplicitlyTeleport()
+    {
+        AudioManager.Instance.PlaySFX(_teleporterSFX);
+        joystick.raycastTarget = true;
+        player.transform.position = _teleportDestination.position;
     }
 
     private bool IsTeleporting()
@@ -42,12 +51,6 @@ public class Teleporter : MonoBehaviour
 
         // Fade In
         yield return StartCoroutine(FadeIn());
-    }
-    void ExplicitlyTeleport()
-    {
-        AudioManager.Instance.PlaySFX(_teleporterSFX);
-        joystick.raycastTarget = true;
-        player.transform.position = _teleportDestination.position;
     }
     private IEnumerator FadeOut(GameObject player)
     {

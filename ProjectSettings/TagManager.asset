@@ -21,6 +21,7 @@ TagManager:
   - greengate
   - w1_locked_levels
   - w2_locked_levels
+  - teleportable
   layers:
   - Default
   - TransparentFX
