@@ -7,14 +7,14 @@ public class MachineTrigger : MonoBehaviour
     [SerializeField] EnemySpawner _enemySpawner;
     private void Awake()
     {
-        _machine.SetActive(false);
+        
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            gameObject.transform.position = new(transform.position.x, 10f, transform.position.z);
             _machine.SetActive(true);
+            gameObject.transform.position = new(transform.position.x, 10f, transform.position.z);
             _enemySpawner.Gate(true);
         }
     }

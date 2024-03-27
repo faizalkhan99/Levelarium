@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     CamShake _camShake;
 
     [SerializeField] private GameObject _keyPrefab;
-    [SerializeField] GameObject _enemyPrefab;
+    [SerializeField] GameObject[] _enemyPrefab;
     [SerializeField] private GameObject _areanaGate;
 
     [SerializeField] private int _damageDealt;
@@ -25,22 +24,23 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private AudioClip _evilMachineDeadSFX;
     [SerializeField] private AudioClip _keySpawnedSFX;
 
+
     private void Awake()
     {
-        Gate(false);
-        StartCoroutine(SpanwEnemies());
         _camShake = GameObject.Find("Main Camera").GetComponent<CamShake>();
     }
     private void Start()
     {
-    
+        Gate(false);
+        StartCoroutine(SpanwEnemies());
     }
     public IEnumerator SpanwEnemies()
     {
         while (gameObject)
         {
             yield return new WaitForSeconds(_timeBetweenSpawn);
-            Instantiate(_enemyPrefab, _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity);
+            Instantiate(_enemyPrefab[Random.Range(0, _enemyPrefab.Length)], _spawnPoints[Random.Range(0, _spawnPoints.Length)].position, Quaternion.identity);
+            Debug.Log("spawned");
         }
     }
 
@@ -56,9 +56,10 @@ public class EnemySpawner : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player_Bullet"))
         {
+            Debug.Log("Bullet hit");
             _health -= _damageDealt;
             //Spawn a particle effect of to show bullet impact.
-            Destroy(other.gameObject); //bullet destroyed here
+            Destroy(other.gameObject);
             if (_health <= 0)
             {
                 Gate(false);

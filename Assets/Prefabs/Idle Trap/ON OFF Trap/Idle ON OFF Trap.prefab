@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3228284028644801681}
   - component: {fileID: 5942394534720239528}
   - component: {fileID: 1795110910968275044}
-  - component: {fileID: 4263554019570752176}
   - component: {fileID: 8473410727631664895}
   m_Layer: 0
   m_Name: Base_1
@@ -85,22 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!208 &4263554019570752176
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59525284930323875}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.70000005, y: 0.075, z: 0.70000005}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: -0.125, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!65 &8473410727631664895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -536,6 +519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3899261095927328584}
   - component: {fileID: 4116666388359660132}
+  - component: {fileID: 5641532086121865640}
   m_Layer: 0
   m_Name: Idle ON OFF Trap
   m_TagString: Untagged
@@ -553,8 +537,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.39, z: -8.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5347368304158156004}
   - {fileID: 5208564777755775491}
@@ -576,6 +560,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toOnOff: {fileID: 3893905554488745782}
+  _waitAfterON: 3
+  _waitAfterOFF: 2
+--- !u!208 &5641532086121865640
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933706995718358016}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.81, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5354508677341473574
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +589,6 @@ GameObject:
   - component: {fileID: 189404797521557453}
   - component: {fileID: 6463174306862426242}
   - component: {fileID: 7847318608995904636}
-  - component: {fileID: 7463374029889666091}
   - component: {fileID: 7203224899714653807}
   m_Layer: 0
   m_Name: Base_2
@@ -661,22 +662,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!208 &7463374029889666091
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354508677341473574}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.70000005, y: 0.075, z: 0.70000005}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: -0.125, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!65 &7203224899714653807
 BoxCollider:
   m_ObjectHideFlags: 0

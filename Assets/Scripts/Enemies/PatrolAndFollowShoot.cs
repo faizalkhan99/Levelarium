@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class PatrolAndFollowShoot : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class PatrolAndFollowShoot : MonoBehaviour
     }
     private void Update()
     {
-        //DisplayHealth();
+        DisplayHealth();
     }
     void FixedUpdate()
     {
@@ -82,6 +83,7 @@ public class PatrolAndFollowShoot : MonoBehaviour
             if (_shoot) _shoot.FireBullet();
         }
     }
+    [SerializeField] private float _rotationSpeed;
     void HandleMovement()
     {
         if (_timer > 0f)
@@ -93,6 +95,14 @@ public class PatrolAndFollowShoot : MonoBehaviour
             Vector3 targetPosition;
             if (_playerInsideTrigger)
             {
+                Vector3 direction = _player.position - transform.position;
+                direction.y = 0f; // Optional: Ensure rotation only happens around the Y-axis
+
+                // Calculate the target rotation
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+                // Smoothly interpolate towards the target rotation
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
                 targetPosition = _player.position;
             }
             else

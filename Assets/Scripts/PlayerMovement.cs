@@ -36,12 +36,12 @@ public class PlayerMovement : MonoBehaviour
         if (!TryGetComponent(out _rigidbody)) Debug.Log("Player:RigidBody:NULL");
         if (!TryGetComponent(out _renderer)) Debug.Log("Player:Renderer:NULL");
     }
-    /*private void Update()
+    private void Update()
     {
         DisplayHealth();
         _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
         CheckFall();
-    }*/
+    }
 
     public float acceleration = 10f; // Adjust as needed
     public float deceleration = 10f; // Adjust as needed
@@ -51,9 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     /*void Update()
     {
-        DisplayHealth();
-        _playerHealthbar.gameObject.transform.rotation = Quaternion.identity;
-        CheckFall();
+        
         float horizontalInput = joystick.Horizontal;
         float verticalInput = joystick.Vertical;
 
@@ -114,10 +112,10 @@ public class PlayerMovement : MonoBehaviour
 
         //_rigidbody.velocity = force;
 
-            _movesfx.pitch = Mathf.Lerp(_movesfx.pitch, (direction!=Vector3.zero)?1:0.5f, deceleration * Time.deltaTime);
-            _movesfx.volume = Mathf.Lerp(_movesfx.volume, (direction!=Vector3.zero)?1:0, deceleration * Time.deltaTime);
-        
-        
+        _movesfx.pitch = Mathf.Lerp(_movesfx.pitch, (direction != Vector3.zero) ? 1 : 0.5f, deceleration * Time.deltaTime);
+        _movesfx.volume = Mathf.Lerp(_movesfx.volume, (direction != Vector3.zero) ? .5f : 0, deceleration * Time.deltaTime);
+
+
 
         float moveAngle = Mathf.Atan2(rotatedDirection.x, rotatedDirection.z) * Mathf.Rad2Deg; // Calculate the rotation angle for the offset direction.
         if (rotatedDirection != Vector3.zero)
