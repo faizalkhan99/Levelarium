@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &957879646713360666
 Transform:
   m_ObjectHideFlags: 0
@@ -360,11 +360,11 @@ MonoBehaviour:
   _rotationSpeed: 10
   _playerHealthbar: {fileID: 5916462599870771393}
   canTakeDamage: 1
-  damageCooldown: 0.5
+  damageCooldown: 0.125
   force: {x: 0, y: 0, z: 0}
   _rigidbody: {fileID: 3122831056287075768}
   acceleration: 10
-  deceleration: 10
+  deceleration: 2
   _isStandingOnMovingPlatform: 0
 --- !u!114 &2439288212380229552
 MonoBehaviour:
@@ -430,8 +430,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5217881, y: 3.6092653, z: 2.0493672}
-  m_Center: {x: 0, y: -0.7683899, z: -0.038984846}
+  m_Size: {x: 3.4986885, y: 4.0289974, z: 2.0493672}
+  m_Center: {x: -1.7940728e-16, y: -0.55852395, z: -0.038984843}
 --- !u!82 &3914281450808976932
 AudioSource:
   m_ObjectHideFlags: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 5
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:

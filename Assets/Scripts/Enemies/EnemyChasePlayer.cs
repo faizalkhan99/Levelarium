@@ -18,9 +18,11 @@ public class EnemyChasePlayer : MonoBehaviour
     [SerializeField] private float knockBackDuration;
     [SerializeField] private float knockBackForce;
 
+    private DropLoot loot;
 
     void Awake()
     {
+        loot = GetComponent<DropLoot>();
         _camShakeHandle = GameObject.Find("Main Camera").GetComponent<CamShake>();
         _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
         _agent = GetComponent<NavMeshAgent>();
@@ -81,6 +83,7 @@ public class EnemyChasePlayer : MonoBehaviour
         _enemyHealth -= damage; //dry run karle ise
         if (_enemyHealth <= 0)
         {
+            loot.LootProbability();
             Destroy(gameObject);
         }
         

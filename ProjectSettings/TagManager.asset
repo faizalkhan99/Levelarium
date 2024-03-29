@@ -22,6 +22,7 @@ TagManager:
   - w1_locked_levels
   - w2_locked_levels
   - teleportable
+  - null
   layers:
   - Default
   - TransparentFX

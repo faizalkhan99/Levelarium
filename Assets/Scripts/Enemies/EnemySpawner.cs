@@ -20,6 +20,8 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] Transform[] _gatesToDisappear;
+    [SerializeField] Transform[] _objectsToAppear;
+
 
     [SerializeField] private AudioClip _evilMachineDeadSFX;
     [SerializeField] private AudioClip _keySpawnedSFX;
@@ -32,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         Gate(false);
-        StartCoroutine(SpanwEnemies());
+        //StartCoroutine(SpanwEnemies());
     }
     public IEnumerator SpanwEnemies()
     {
@@ -64,6 +66,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 Gate(false);
                 OpenGates();
+                ObjectsToAppear();
                 Die();
             }
         }   
@@ -84,6 +87,7 @@ public class EnemySpawner : MonoBehaviour
             _camShake.EnableShake();
             AudioManager.Instance.PlaySFX(_evilMachineDeadSFX);
             AudioManager.Instance.PlaySFX(_keySpawnedSFX);
+            StopCoroutine(SpanwEnemies());
             Destroy(gameObject);
         }
     }
@@ -101,6 +105,14 @@ public class EnemySpawner : MonoBehaviour
             //if gate exists, open it.
             if(_gatesToDisappear[i])
             _gatesToDisappear[i].gameObject.SetActive(false);
+        }
+    }private void ObjectsToAppear()
+    {
+        for (int i = 0; i < _gatesToDisappear.Length; i++)
+        {
+            //if object exists, enable it.
+            if(_objectsToAppear[i])
+                _objectsToAppear[i].gameObject.SetActive(true);
         }
     }
 }

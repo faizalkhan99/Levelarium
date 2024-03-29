@@ -45,32 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float acceleration = 10f; // Adjust as needed
     public float deceleration = 10f; // Adjust as needed
-    //public float maxSpeed = 5f; // Adjust as needed
-
     private Vector3 currentVelocity = Vector3.zero;
-
-    /*void Update()
-    {
-        
-        float horizontalInput = joystick.Horizontal;
-        float verticalInput = joystick.Vertical;
-
-        // Calculate target velocity based on input
-        Vector3 targetVelocity = new Vector3(horizontalInput, 0, verticalInput) * maxSpeed;
-
-        // Smoothly interpolate between current velocity and target velocity
-        if (targetVelocity.magnitude < currentVelocity.magnitude) // If decelerating
-        {
-            currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, Time.deltaTime * deceleration);
-        }
-        else // If accelerating
-        {
-            currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, Time.deltaTime * acceleration);
-        }
-
-        // Apply the velocity to the Rigidbody
-        _rigidbody.velocity = currentVelocity;
-    }*/
 
     void FixedUpdate()
     {
@@ -95,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
                 GetComponent<Collider>().material.dynamicFriction = 1.0f;
             }
         }
-
 
         if (force.magnitude < currentVelocity.magnitude) // If decelerating
         {
@@ -173,19 +147,4 @@ public class PlayerMovement : MonoBehaviour
         }
         _renderer.enabled = true;
     }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ramp"))
-        {
-            _rigidbody.useGravity = false;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ramp"))
-        {
-            _rigidbody.useGravity = true;
-        }
-    }*/
 }
