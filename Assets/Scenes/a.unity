@@ -3888,7 +3888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 5756788743534228043}
-  _offset: {x: 10, y: 20, z: -13}
+  _offset: {x: 20, y: 35, z: -25}
   _smootTime: 0.2
   _temp: 0
 --- !u!114 &963194230
