@@ -26,7 +26,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _creditsPanel;
     [SerializeField] GameObject _mainmenuPanel;
     [SerializeField] GameObject _resetPanel;
-
     [SerializeField] GameObject _levelButton;
 
     [SerializeField] Slider _progressBar;
@@ -42,6 +41,7 @@ public class UIManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         Time.timeScale = 1.0f;
+        TurnOFFEverything();
         _loadingScreen.SetActive(true);
         StartCoroutine(LoadingAsync(sceneName));
     }
@@ -116,7 +116,7 @@ public class UIManager : MonoBehaviour
         if (_mainmenuPanel != null) _mainmenuPanel.SetActive(false);
         if (_creditsPanel != null) _creditsPanel.SetActive(false);
         if (_resetPanel != null) _resetPanel.SetActive(false);
-
+        if(_levelButton != null) _levelButton.SetActive(false);
     }
     public void Credits()
     {

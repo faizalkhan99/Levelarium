@@ -5488,6 +5488,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2432449441876871209, guid: 0f7523c28bb160b4f9868064b566bc65,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255212643011678046, guid: 0f7523c28bb160b4f9868064b566bc65,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7255212643031791027, guid: 0f7523c28bb160b4f9868064b566bc65,
         type: 3}
       propertyPath: m_IsActive
@@ -5641,6 +5651,11 @@ PrefabInstance:
     - target: {fileID: 7255212645054507455, guid: 0f7523c28bb160b4f9868064b566bc65,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255212645068341751, guid: 0f7523c28bb160b4f9868064b566bc65,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
