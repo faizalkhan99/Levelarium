@@ -7775,7 +7775,7 @@ PrefabInstance:
     - target: {fileID: 456893870252875627, guid: 09f0c06ff084f6649ba5a9fbaae327cc,
         type: 3}
       propertyPath: gateTag
-      value: bluegate
+      value: greengate
       objectReference: {fileID: 0}
     - target: {fileID: 510324642503342828, guid: 09f0c06ff084f6649ba5a9fbaae327cc,
         type: 3}
@@ -7841,7 +7841,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 06da535c3e171bf4e81a9447889d822a, type: 2}
+      objectReference: {fileID: 2100000, guid: cb38c366ebee47a47a9dfbcf4a4a86df, type: 2}
     - target: {fileID: 5770431389369302855, guid: 09f0c06ff084f6649ba5a9fbaae327cc,
         type: 3}
       propertyPath: m_Name
@@ -14112,7 +14112,7 @@ GameObject:
   - component: {fileID: 815153061}
   m_Layer: 0
   m_Name: Pressure Plate Controller
-  m_TagString: bluegate
+  m_TagString: greengate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -17772,8 +17772,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
+  near clip plane: -50
+  far clip plane: 200
   field of view: 45
   orthographic: 1
   orthographic size: 20
@@ -89500,7 +89500,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06da535c3e171bf4e81a9447889d822a, type: 2}
+  - {fileID: 2100000, guid: cb38c366ebee47a47a9dfbcf4a4a86df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
