@@ -30,11 +30,11 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Box
   - Bullet
   - Enemies
   - Wall
-  - 
+  - invisible_wall
   - 
   - 
   - 
